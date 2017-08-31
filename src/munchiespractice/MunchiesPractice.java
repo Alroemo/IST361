@@ -17,8 +17,9 @@ public class MunchiesPractice {
     public static void main(String[] args) {
        
         View view= new View();
-       
-         Controller controller = new Controller(view);
+        Score score = new Score();
+        
+         Controller controller = new Controller(view, score);
         view.setVisible(true);
     }
     

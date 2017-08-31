@@ -14,9 +14,11 @@ import java.awt.event.ActionListener;
  */
 public class Controller {
     View view;
+    Score score;
     
-    public Controller(View view){
+    public Controller(View view, Score score){
         this.view = view;
+        this.score = score;
         view.addTopLeftListener(new topLButtonListener());
         view.addTopMiddleListener(new topMButtonListener());
         view.addTopRightListener(new topRButtonListener());
@@ -25,6 +27,11 @@ public class Controller {
         view.addlowerRightListener(new lowerRButtonListener());
     }
     
+   public Score CalculateScore(){
+        //needs to add or subtract score before returning and displaying
+       
+      return score;
+    }
     
     
     class topLButtonListener implements ActionListener{
