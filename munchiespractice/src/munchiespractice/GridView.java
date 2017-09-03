@@ -1,5 +1,6 @@
 package munchiespractice;
 
+import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -17,87 +18,98 @@ import java.util.Random;
  * @author Lauren
  */
 public class GridView extends JFrame{
-    private JPanel mainPanel;
-    private JButton topLeft;
-    private JButton topMiddle;
-    private JButton topRight;
-    
-    private JButton lowerLeft;
-    private JButton lowerMiddle;
-    private JButton lowerRight;
+//    private JPanel mainPanel;
+//    private JButton topLeft;
+//    private JButton topMiddle;
+//    private JButton topRight;
+//    
+//    private JButton lowerLeft;
+//    private JButton lowerMiddle;
+//    private JButton lowerRight;
     
     public GridView(){
         
+        
         setSize(700, 500);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-       mainPanel = new JPanel (new GridLayout (2,3));
-       add(mainPanel);
-       topLeft = new JButton("1");
-       topMiddle = new JButton("2");
-       topRight = new JButton("3");
-       lowerLeft = new JButton("4");
-       lowerMiddle = new JButton("5");
-       lowerRight = new JButton("6");
-      
-       
-       mainPanel.add(topLeft);
-       mainPanel.add(topMiddle);
-       mainPanel.add(topRight);
-       mainPanel.add(lowerLeft);
-       mainPanel.add(lowerMiddle);
-       mainPanel.add(lowerRight);
+//       mainPanel = new JPanel (new GridLayout (2,3));
+//       add(mainPanel);
+//       topLeft = new JButton("1");
+//       topMiddle = new JButton("2");
+//       topRight = new JButton("3");
+//       lowerLeft = new JButton("4");
+//       lowerMiddle = new JButton("5");
+//       lowerRight = new JButton("6");
+//      
+//       
+//       mainPanel.add(topLeft);
+//       mainPanel.add(topMiddle);
+//       mainPanel.add(topRight);
+//       mainPanel.add(lowerLeft);
+//       mainPanel.add(lowerMiddle);
+//       mainPanel.add(lowerRight);
+    }
+    
+    public void CreateGrid(int row,int col){
+        Container pane = getContentPane();
+    pane.setLayout(new GridLayout(row, col));
+    for (int i = 0; i < row * col; i++) {
+        //will be put controlled randomized numbers
+      JButton button = new JButton(Integer.toString(i + 1));
+      pane.add(button);
+    }
     }
 
-    public void addTopLeftListener(ActionListener al){
-        topLeft.addActionListener(al); 
-    }
-    public void addTopMiddleListener(ActionListener al){
-        topMiddle.addActionListener(al); 
-    
-    }
-    public void addTopRightListener(ActionListener al){
-        topRight.addActionListener(al); 
-    }
-public void addlowerLeftListener(ActionListener al){
-        lowerLeft.addActionListener(al); 
-    }
-public void addlowerMiddleListener(ActionListener al){
-        lowerMiddle.addActionListener(al); 
-    }
-public void addlowerRightListener(ActionListener al){
-        lowerRight.addActionListener(al); 
-    }
-
-public void changeNumberforTopLeftButton(){
-    int b = (int)(Math.random()* 50 +1);
-    
-    topLeft.setText(b+ "");
-}
-public void changeNumberforTopMiddleButton(){
-    int b = (int)(Math.random()* 50 +1);
-    
-    topMiddle.setText(b+ "");
-}
-public void changeNumberforTopRightButton(){
-    int b = (int)(Math.random()* 50 +1);
-    
-    topRight.setText(b+ "");
-}
-
-public void changeNumberforlowerLeftButton(){
-    int b = (int)(Math.random()* 50 +1);
-    
-    lowerLeft.setText(b+ "");
-}
-public void changeNumberforlowerMiddleButton(){
-    int b = (int)(Math.random()* 50 +1);
-    
-    lowerMiddle.setText(b+ "");
-}
-public void changeNumberforlowerRightButton(){
-    int b = (int)(Math.random()* 50 +1);
-    
-    lowerRight.setText(b+ "");
-}
+//    public void addTopLeftListener(ActionListener al){
+//        topLeft.addActionListener(al); 
+//    }
+//    public void addTopMiddleListener(ActionListener al){
+//        topMiddle.addActionListener(al); 
+//    
+//    }
+//    public void addTopRightListener(ActionListener al){
+//        topRight.addActionListener(al); 
+//    }
+//public void addlowerLeftListener(ActionListener al){
+//        lowerLeft.addActionListener(al); 
+//    }
+//public void addlowerMiddleListener(ActionListener al){
+//        lowerMiddle.addActionListener(al); 
+//    }
+//public void addlowerRightListener(ActionListener al){
+//        lowerRight.addActionListener(al); 
+//    }
+//
+//public void changeNumberforTopLeftButton(){
+//    int b = (int)(Math.random()* 50 +1);
+//    
+//    topLeft.setText(b+ "");
+//}
+//public void changeNumberforTopMiddleButton(){
+//    int b = (int)(Math.random()* 50 +1);
+//    
+//    topMiddle.setText(b+ "");
+//}
+//public void changeNumberforTopRightButton(){
+//    int b = (int)(Math.random()* 50 +1);
+//    
+//    topRight.setText(b+ "");
+//}
+//
+//public void changeNumberforlowerLeftButton(){
+//    int b = (int)(Math.random()* 50 +1);
+//    
+//    lowerLeft.setText(b+ "");
+//}
+//public void changeNumberforlowerMiddleButton(){
+//    int b = (int)(Math.random()* 50 +1);
+//    
+//    lowerMiddle.setText(b+ "");
+//}
+//public void changeNumberforlowerRightButton(){
+//    int b = (int)(Math.random()* 50 +1);
+//    
+//    lowerRight.setText(b+ "");
+//}
 
 }

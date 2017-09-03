@@ -5,12 +5,17 @@
  */
 package munchiespractice;
 
+import java.awt.Container;
+import java.awt.GridLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
 /**
  *
  * @author Alex
  */
-public class Munchiespractice {
-
+public class Munchiespractice extends JFrame{
     /**
      * @param args the command line arguments
      */
@@ -20,6 +25,7 @@ public class Munchiespractice {
         GridView view = new GridView();
          GridController controller = new GridController(view);
         view.setVisible(true);
-    }
+
+  }
     
 }
