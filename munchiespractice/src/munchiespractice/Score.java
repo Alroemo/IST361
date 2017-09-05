@@ -14,7 +14,7 @@ public class Score {
     int highScore;
     
     public Score(){
-        currentScore = this.currentScore;
-        highScore = this.currentScore;
+        this.currentScore = currentScore;
+        this.highScore = highScore;
     }
 }

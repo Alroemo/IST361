@@ -58,7 +58,15 @@ public class GridView extends JFrame{
       JButton button = new JButton(Integer.toString(i + 1));
       pane.add(button);
     }
+
     }
+    
+    
+            
+    
+    
+    
+    
 
 //    public void addTopLeftListener(ActionListener al){
 //        topLeft.addActionListener(al); 

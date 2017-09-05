@@ -21,9 +21,9 @@ public class Munchiespractice extends JFrame{
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
+        Score score = new Score();
         GridView view = new GridView();
-         GridController controller = new GridController(view);
+         GridController controller = new GridController(view, score);
         view.setVisible(true);
 
   }

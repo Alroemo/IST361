@@ -14,9 +14,11 @@ import java.awt.event.ActionListener;
  */
 public class GridController {
     GridView view;
+    Score score;
     
-    public GridController(GridView view){
+    public GridController(GridView view, Score score){
         this.view = view;
+        this.score= score;
           view.CreateGrid(5, 5);
 //        view.addTopLeftListener(new topLButtonListener());
 //        view.addTopMiddleListener(new topMButtonListener());
@@ -25,8 +27,27 @@ public class GridController {
 //        view.addlowerMiddleListener(new lowerMButtonListener());
 //        view.addlowerRightListener(new lowerRButtonListener());
     }
+  /*  public void calcScore(){
+        if(determinePrime()==true){
+            
+           // score= score +100;
+        }
+        else{
+            
+        }
+        
+        
+    }
     
-    
+    */
+   // public boolean determinePrime(){
+    // if(view.button[0].equals()){
+    //        return true;
+     //   }
+   // else{
+  //  return false;
+//}
+   // }
     
 //    class topLButtonListener implements ActionListener{
 //        public void actionPerformed(ActionEvent e ){
