@@ -1,5 +1,6 @@
 package munchiespractice;
 
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
@@ -243,5 +244,7 @@ public boolean testPrime(int maybePrime, int maxDigit) //private? idk?
 //    
 //    lowerRight.setText(b+ "");
 //}
+
+}
 
 }
