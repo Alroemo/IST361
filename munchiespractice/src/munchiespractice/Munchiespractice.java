@@ -15,7 +15,8 @@ import javax.swing.JFrame;
  *
  * @author Alex
  */
-public class Munchiespractice extends JFrame{
+public class Munchiespractice extends JFrame {
+
     /**
      * @param args the command line arguments
      */
@@ -23,9 +24,9 @@ public class Munchiespractice extends JFrame{
         // TODO code application logic here
         Score score = new Score();
         GridView view = new GridView();
-         GridController controller = new GridController(view, score);
+        GridController controller = new GridController(view, score);
         view.setVisible(true);
 
-  }
-    
+    }
+
 }
