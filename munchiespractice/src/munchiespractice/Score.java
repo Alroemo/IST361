@@ -10,11 +10,20 @@ package munchiespractice;
  * @author Lauren
  */
 public class Score {
+
     int currentScore;
     int highScore;
-    
-    public Score(){
+
+    public Score() {
         this.currentScore = currentScore;
         this.highScore = highScore;
+    }
+    
+    public void setScore(int score){
+        currentScore = score;
+    }
+    
+    public int getCurrentScore(){
+        return currentScore;
     }
 }
