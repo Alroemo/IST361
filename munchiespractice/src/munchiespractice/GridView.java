@@ -2,76 +2,37 @@ package munchiespractice;
 
 import java.awt.*;
 import java.awt.event.*;
+import javax.swing.*;
+import java.util.*;
 
-import javax.swing.JButton;
-
-import javax.swing.JFrame;
-
-import javax.swing.JPanel;
-
-import java.util.Random;
-import javax.swing.JLabel;
-
-/*
-
- * To change this license header, choose License Headers in Project Properties.
-
- * To change this template file, choose Tools | Templates
-
- * and open the template in the editor.
-
- */
-//
-/**
- *
- *
- *
- * @author Lauren
- *
- */
 public class GridView extends JFrame {
 
     private int score = 0;
-    private Score currentScore = new Score(); 
+    private Score currentScore = new Score();
     JLabel scoreLabel = new JLabel("Score ");
 
     public GridView() {
-
         this.score = score;
-
         setSize(700, 500);
-
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-
     }
 
     public void CreateGrid(int row, int col) {
 
-        int gridSize;  //max
-
+        int gridSize; 
         Container pane = getContentPane();
-
         pane.setLayout(new GridLayout(row, col));
-
-        gridSize = row * col; //max
-
-        JButton buttons[];  //max
-
+        gridSize = row * col;
+        JButton buttons[];
         buttons = new JButton[50];
-
         for (int i = 0; i < gridSize; i++) {
 
-            //will be put controlled randomized numbers
-            buttons[i] = new JButton(Integer.toString(i + 1));  //max
-
+            buttons[i] = new JButton(Integer.toString(i + 1));
             pane.add(buttons[i]);
-
-            //added
-            //lauren added button action listener
             pane.add(scoreLabel);
 
             buttons[i].addActionListener(new ActionListener() {
-                ;//max
+                ;
 
       
         @Override
@@ -92,19 +53,8 @@ public class GridView extends JFrame {
                         tempbutton.setBackground(Color.RED);
                     }
                     ;
-
-                    randomizeGrid(gridSize, buttons);
-
                 }
             }
-            //stop of laurens edit
-
-            //  randomizeGrid(gridSize, buttons);
-
-            //JButton button = new JButton(Integer.toString(i + 1));  //original
-
-            //pane.add(button); //original
-
             );
         };
 
@@ -183,7 +133,6 @@ public class GridView extends JFrame {
             buttons[i].setText(Integer.toString(primeNumber));
 
             //buttons[i].setBackground(Color.yellow);
-
             //buttons[i] = primeNumber; //need to get the prime from somewhere
         }
 
@@ -267,9 +216,7 @@ public class GridView extends JFrame {
         for (int i = 0; i < gridSize; i++) {
             if (testPrime(Integer.parseInt(buttons[i].getText()), maxDigit) == true) {
                 buttons[i].setBackground(Color.yellow);
-            }
-            else
-            {
+            } else {
                 buttons[i].setBackground(new JButton().getBackground());
             }
 
