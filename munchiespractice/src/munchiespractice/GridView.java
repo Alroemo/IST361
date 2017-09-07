@@ -179,7 +179,7 @@ public class GridView extends JFrame {
 
             buttons[i].setText(Integer.toString(primeNumber));
 
-            buttons[i].setBackground(Color.yellow);
+            //buttons[i].setBackground(Color.yellow);
 
             //buttons[i] = primeNumber; //need to get the prime from somewhere
         }
@@ -264,6 +264,10 @@ public class GridView extends JFrame {
         for (int i = 0; i < gridSize; i++) {
             if (testPrime(Integer.parseInt(buttons[i].getText()), maxDigit) == true) {
                 buttons[i].setBackground(Color.yellow);
+            }
+            else
+            {
+                buttons[i].setBackground(new JButton().getBackground());
             }
 
         }
