@@ -21,6 +21,7 @@ import javax.swing.JLabel;
  * and open the template in the editor.
 
  */
+//
 /**
  *
  *
@@ -83,10 +84,12 @@ public class GridView extends JFrame {
                         System.out.println(numbertest + "prime");
                         currentScore.setScore(currentScore.getCurrentScore() + 100);
                         scoreLabel.setText("Score: " + currentScore.getCurrentScore());
+                        tempbutton.setBackground(Color.GREEN);
                     } else {
                         System.out.println(numbertest + "not prime");
                         currentScore.setScore(currentScore.getCurrentScore() - 100);
                         scoreLabel.setText("Score: " + currentScore.getCurrentScore());
+                        tempbutton.setBackground(Color.RED);
                     }
                     ;
 
