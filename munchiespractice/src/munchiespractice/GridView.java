@@ -18,6 +18,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import java.util.Random;
+import javax.swing.JLabel;
 
 /*
 
@@ -56,11 +57,13 @@ public class GridView extends JFrame{
 //    private JButton lowerMiddle;
 
 //    private JButton lowerRight;
-
+private int score =0;
+JLabel scoreLabel = new JLabel("Score ");
     
 
     public GridView(){
 
+        this.score = score;
         
 
         
@@ -106,6 +109,7 @@ public class GridView extends JFrame{
     
 
         public void CreateGrid(int row,int col){
+          
 
     int gridSize;  //max
 
@@ -124,11 +128,13 @@ public class GridView extends JFrame{
         //will be put controlled randomized numbers
 
         buttons[i] = new JButton(Integer.toString(i + 1));  //max
+        
 
         pane.add(buttons[i]);    
         
         //added
         //lauren added button action listener
+          pane.add(scoreLabel);
         
         buttons[i].addActionListener(new ActionListener() {;//max
 
@@ -138,11 +144,16 @@ public class GridView extends JFrame{
         JButton tempbutton = (JButton) event.getSource();
         String test=tempbutton.getText();
        int numbertest=Integer.parseInt(test);
-                if(testPrime(numbertest, 100)==false){
+                if(testPrime(numbertest, 100)==true){
+                    
                     System.out.println(numbertest +"prime");
+                    score = score+100;
+                    scoreLabel.setText("Score: "+ score);
                 }else
                 {
                     System.out.println(numbertest+"not prime");
+                    score= score-100;
+                    scoreLabel.setText("Score: "+ score);
                 }
                     
                     

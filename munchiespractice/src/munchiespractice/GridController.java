@@ -21,25 +21,16 @@ public class GridController {
         this.view = view;
         this.score= score;
           view.CreateGrid(5, 5);
-          JButton buttons[]= new JButton[50];
+          
         
           
 
     }
 }
-  /*  public void calcScore(){
-        if(determinePrime()==true){
-            
-           // score= score +100;
-        }
-        else{
-            
-        }
-        
-        
-    }
+
+
     
-    */
+    
    // public boolean determinePrime(){
     // if(view.button[0].equals()){
     //        return true;
