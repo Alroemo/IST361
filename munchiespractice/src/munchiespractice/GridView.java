@@ -19,7 +19,7 @@ public class GridView extends JFrame {
 
     public void CreateGrid(int row, int col) {
 
-        int gridSize; 
+        int gridSize;
         Container pane = getContentPane();
         pane.setLayout(new GridLayout(row, col));
         gridSize = row * col;
@@ -39,18 +39,23 @@ public class GridView extends JFrame {
                 public void actionPerformed(ActionEvent event) {
                     JButton tempbutton = (JButton) event.getSource();
                     String test = tempbutton.getText();
+                    System.out.println(tempbutton.getBackground());
+                    
                     int numbertest = Integer.parseInt(test);
-                    if (testPrime(numbertest, 100) == true) {
-
+                    if (testPrime(numbertest, 100) == true && !(tempbutton.getBackground() == new Color(0, 255, 0) || tempbutton.getBackground() == new Color(255,0,0))) {
+                        Color cur = tempbutton.getBackground();
                         System.out.println(numbertest + "prime");
                         currentScore.setScore(currentScore.getCurrentScore() + 100);
                         scoreLabel.setText("Score: " + currentScore.getCurrentScore());
                         tempbutton.setBackground(Color.GREEN);
+                        
                     } else {
-                        System.out.println(numbertest + "not prime");
-                        currentScore.setScore(currentScore.getCurrentScore() - 100);
-                        scoreLabel.setText("Score: " + currentScore.getCurrentScore());
-                        tempbutton.setBackground(Color.RED);
+                        if (tempbutton.getBackground() != Color.GREEN || tempbutton.getBackground() != Color.RED) {
+                            System.out.println(numbertest + "not prime");
+                            currentScore.setScore(currentScore.getCurrentScore() - 100);
+                            scoreLabel.setText("Score: " + currentScore.getCurrentScore());
+                            tempbutton.setBackground(Color.RED);
+                        }
                     }
                     ;
                 }
@@ -84,7 +89,7 @@ public class GridView extends JFrame {
             buttons[i].setText(buttons[randomIndex].getText());
             buttons[randomIndex].setText(a.getText());
         }
-        
+
         //for playtest
         highlightAnswers(buttons, gridSize, maxDigit); //show the answers
     }
