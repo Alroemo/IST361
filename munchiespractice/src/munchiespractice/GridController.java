@@ -7,6 +7,7 @@ package munchiespractice;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JButton;
 
 /**
  *
@@ -20,13 +21,12 @@ public class GridController {
         this.view = view;
         this.score= score;
           view.CreateGrid(5, 5);
-//        view.addTopLeftListener(new topLButtonListener());
-//        view.addTopMiddleListener(new topMButtonListener());
-//        view.addTopRightListener(new topRButtonListener());
-//        view.addlowerLeftListener(new lowerLButtonListener());
-//        view.addlowerMiddleListener(new lowerMButtonListener());
-//        view.addlowerRightListener(new lowerRButtonListener());
+          JButton buttons[]= new JButton[50];
+        
+          
+
     }
+}
   /*  public void calcScore(){
         if(determinePrime()==true){
             
@@ -47,13 +47,7 @@ public class GridController {
    // else{
   //  return false;
 //}
-   // }
-    
-//    class topLButtonListener implements ActionListener{
-//        public void actionPerformed(ActionEvent e ){
-//            view.changeNumberforTopLeftButton();
-//        }
-//        
+     
 //    }
 //      class topMButtonListener implements ActionListener{
 //        public void actionPerformed(ActionEvent e ){
@@ -86,4 +80,4 @@ public class GridController {
 //        
 //    }
             
-}
+

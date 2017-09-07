@@ -7,6 +7,7 @@ import java.awt.Color;
 import java.awt.Container;
 
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
 
 import java.awt.event.ActionListener;
 
@@ -124,20 +125,55 @@ public class GridView extends JFrame{
 
         buttons[i] = new JButton(Integer.toString(i + 1));  //max
 
-        pane.add(buttons[i]);            //max
+        pane.add(buttons[i]);    
+        
+        //added
+        //lauren added button action listener
+        
+        buttons[i].addActionListener(new ActionListener() {;//max
 
+      
+        @Override
+        public void actionPerformed(ActionEvent event){
+        JButton tempbutton = (JButton) event.getSource();
+        String test=tempbutton.getText();
+       int numbertest=Integer.parseInt(test);
+                if(testPrime(numbertest, 100)==false){
+                    System.out.println(numbertest +"prime");
+                }else
+                {
+                    System.out.println(numbertest+"not prime");
+                }
+                    
+                    
+                    
+                    ;
+                
+                
+                
+                
+        randomizeGrid(gridSize,buttons);
+        
+        }}
+        //stop of laurens edit
+                
+                
+                
+                
       //  randomizeGrid(gridSize, buttons);
 
       //JButton button = new JButton(Integer.toString(i + 1));  //original
 
       //pane.add(button); //original
 
-    }
+        );
+        };
 
     randomizeGrid(gridSize, buttons);
 
     }
 
+       
     
 
     
@@ -400,11 +436,6 @@ public void highlightAnswers(JButton buttons[], int gridSize, int maxDigit)
 
 
 
-//    public void addTopLeftListener(ActionListener al){
-
-//        topLeft.addActionListener(al); 
-
-//    }
 
 //    public void addTopMiddleListener(ActionListener al){
 
