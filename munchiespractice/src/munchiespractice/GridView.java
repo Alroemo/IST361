@@ -22,8 +22,11 @@ public class GridView extends JFrame {
         int gridSize;
         Container pane = getContentPane();
         pane.setLayout(new GridLayout(row, col));
-        gridSize = row * col;
+        gridSize = row * col-1;
         JButton buttons[];
+        
+        
+        
         buttons = new JButton[50];
         for (int i = 0; i < gridSize; i++) {
 
@@ -32,7 +35,7 @@ public class GridView extends JFrame {
             pane.add(scoreLabel);
 
             buttons[i].addActionListener(new ActionListener() {
-                ;
+                
 
       
         @Override
