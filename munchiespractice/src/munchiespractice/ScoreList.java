@@ -10,5 +10,5 @@ package munchiespractice;
  * @author Lauren
  */
 public class ScoreList {
-    
+
 }
