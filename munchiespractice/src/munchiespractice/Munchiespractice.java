@@ -21,7 +21,6 @@ public class Munchiespractice extends JFrame {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
         Score score = new Score();
         GridView view = new GridView();
         GridController controller = new GridController(view, score);

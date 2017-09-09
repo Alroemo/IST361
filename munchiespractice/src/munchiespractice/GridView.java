@@ -3,13 +3,14 @@ package munchiespractice;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import java.util.*;
 
 public class GridView extends JFrame {
 
     private int score = 0;
     private Score currentScore = new Score();
     JLabel scoreLabel = new JLabel("Score ");
+    private int numLeftToWin = 0;
+    private boolean win;
 
     public GridView() {
         this.score = score;
@@ -18,7 +19,7 @@ public class GridView extends JFrame {
     }
 
     public void CreateGrid(int row, int col) {
-
+        win = false;
         int gridSize;
         Container pane = getContentPane();
         pane.setLayout(new GridLayout(row, col));
@@ -33,11 +34,14 @@ public class GridView extends JFrame {
             buttons[i] = new JButton(Integer.toString(i + 1));
             pane.add(buttons[i]);
             pane.add(scoreLabel);
+            int numbTest = Integer.parseInt(buttons[i].getText());
+            if(testPrime(numbTest,100))
+            {
+                numLeftToWin++;
+            }
+            System.out.println("Left: "+ numLeftToWin);
 
             buttons[i].addActionListener(new ActionListener() {
-                
-
-      
         @Override
                 public void actionPerformed(ActionEvent event) {
                     JButton tempbutton = (JButton) event.getSource();
@@ -50,7 +54,10 @@ public class GridView extends JFrame {
                         System.out.println(numbertest + "prime");
                         currentScore.setScore(currentScore.getCurrentScore() + 100);
                         scoreLabel.setText("Score: " + currentScore.getCurrentScore());
-                        tempbutton.setBackground(Color.GREEN);
+                        numLeftToWin--;
+                        System.out.println("Left: "+ numLeftToWin);
+
+                        tempbutton.setBackground(new Color(0,255,0));
                         
                     } else {
                         if (tempbutton.getBackground() != Color.GREEN || tempbutton.getBackground() != Color.RED) {
@@ -64,7 +71,14 @@ public class GridView extends JFrame {
                 }
             }
             );
+            
+            if(numLeftToWin <= 0)
+            {
+                win = true;
+                System.out.println("You Win!");
+            }
         };
+        
 
         randomizeGrid(gridSize, buttons);
 

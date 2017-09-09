@@ -22,6 +22,6 @@ public class GridController {
         this.view = view;
         this.score = score;
         view.CreateGrid(5, 5);
-
+        
     }
 }
