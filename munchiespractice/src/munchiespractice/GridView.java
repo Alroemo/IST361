@@ -10,7 +10,7 @@ public class GridView extends JFrame {
     private int score = 0;
     private Score currentScore = new Score();
     JLabel scoreLabel = new JLabel("Score ");
-    JLabel winLabel = new JLabel("0");
+    JLabel winLabel = new JLabel("");
     private int numLeftToWin = 0;
     private boolean win;
 
@@ -55,7 +55,7 @@ public class GridView extends JFrame {
                     //System.out.println(tempbutton.getBackground());
 
                     int numbertest = Integer.parseInt(test);
-                    if (testPrime(numbertest, 100) == true && !(tempbutton.getBackground().equals(new Color(0, 255, 0)) || tempbutton.getBackground().equals(new Color(255, 0, 0)))) {
+                    if (!win && testPrime(numbertest, 100) == true && !(tempbutton.getBackground().equals(new Color(0, 255, 0)) || tempbutton.getBackground().equals(new Color(255, 0, 0)))) {
                         Color cur = tempbutton.getBackground();
                         currentScore.setScore(currentScore.getCurrentScore() + 100);
                         scoreLabel.setText("Score: " + currentScore.getCurrentScore());
@@ -65,7 +65,7 @@ public class GridView extends JFrame {
                         tempbutton.setBackground(new Color(0, 255, 0));
 
                     } else {
-                        if (!(tempbutton.getBackground().equals(new Color(0, 255, 0)) || tempbutton.getBackground().equals(new Color(255, 0, 0)))) {
+                        if (!win && !(tempbutton.getBackground().equals(new Color(0, 255, 0)) || tempbutton.getBackground().equals(new Color(255, 0, 0)))) {
                             System.out.println(numbertest + " Not a prime number");
                             currentScore.setScore(currentScore.getCurrentScore() - 100);
                             scoreLabel.setText("Score: " + currentScore.getCurrentScore());
