@@ -23,64 +23,64 @@ public class GridView extends JFrame {
         int gridSize;
         Container pane = getContentPane();
         pane.setLayout(new GridLayout(row, col));
-        gridSize = row * col-1;
+        gridSize = row * col - 1;
         JButton buttons[];
-        
-        
-        
+
         buttons = new JButton[50];
         for (int i = 0; i < gridSize; i++) {
 
             buttons[i] = new JButton(Integer.toString(i + 1));
             pane.add(buttons[i]);
             pane.add(scoreLabel);
-            int numbTest = Integer.parseInt(buttons[i].getText());
-            if(testPrime(numbTest,100))
-            {
-                numLeftToWin++;
-            }
-            System.out.println("Left: "+ numLeftToWin);
-
+            
             buttons[i].addActionListener(new ActionListener() {
-        @Override
+                @Override
                 public void actionPerformed(ActionEvent event) {
                     JButton tempbutton = (JButton) event.getSource();
                     String test = tempbutton.getText();
-                    System.out.println(tempbutton.getBackground());
-                    
+                    //System.out.println(tempbutton.getBackground());
+
                     int numbertest = Integer.parseInt(test);
-                    if (testPrime(numbertest, 100) == true && !(tempbutton.getBackground() == new Color(0, 255, 0) || tempbutton.getBackground() == new Color(255,0,0))) {
+                    if (testPrime(numbertest, 100) == true && !(tempbutton.getBackground().equals(new Color(0, 255, 0)) || tempbutton.getBackground().equals(new Color(255, 0, 0)))) {
                         Color cur = tempbutton.getBackground();
-                        System.out.println(numbertest + "prime");
                         currentScore.setScore(currentScore.getCurrentScore() + 100);
                         scoreLabel.setText("Score: " + currentScore.getCurrentScore());
                         numLeftToWin--;
-                        System.out.println("Left: "+ numLeftToWin);
+                        System.out.println("Left: " + numLeftToWin);
 
-                        tempbutton.setBackground(new Color(0,255,0));
-                        
+                        tempbutton.setBackground(new Color(0, 255, 0));
+
                     } else {
-                        if (tempbutton.getBackground() != Color.GREEN || tempbutton.getBackground() != Color.RED) {
-                            System.out.println(numbertest + "not prime");
+                        if (!(tempbutton.getBackground().equals(new Color(0, 255, 0)) || tempbutton.getBackground().equals(new Color(255, 0, 0)))) {
+                            System.out.println(numbertest + " Not a prime number");
                             currentScore.setScore(currentScore.getCurrentScore() - 100);
                             scoreLabel.setText("Score: " + currentScore.getCurrentScore());
                             tempbutton.setBackground(Color.RED);
                         }
                     }
                     ;
+                    if (numLeftToWin <= 0) {
+                        win = true;
+                        scoreLabel.setText("You Win!");
+                    }
                 }
             }
             );
-            
-            if(numLeftToWin <= 0)
-            {
-                win = true;
-                System.out.println("You Win!");
-            }
+
         };
-        
 
         randomizeGrid(gridSize, buttons);
+        
+         for (int i = 0; i < gridSize; i++) {
+            int numbTest = Integer.parseInt(buttons[i].getText());
+            
+            if (testPrime(numbTest, 99) == true) {
+                numLeftToWin++;
+                
+            }
+            System.out.println("Grid Num " + i + " Num " + numLeftToWin + " Value" + buttons[i].getText());
+            //System.out.println("Left: " + numLeftToWin);
+         }
 
     }
 
@@ -125,7 +125,7 @@ public class GridView extends JFrame {
 
             while (isPrime == false) {
 
-                System.out.println(primeNumber);
+                //System.out.println(primeNumber);
 
                 primeNumber = (int) (Math.random() * maxDigit + 1); //pick numbers from 1 to maxDigit
 
