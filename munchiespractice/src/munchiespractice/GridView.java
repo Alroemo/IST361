@@ -11,10 +11,6 @@ public class GridView extends JFrame {
     private Score currentScore = new Score();
     JLabel scoreLabel = new JLabel("Score ");
     JLabel winLabel = new JLabel("0");
-    JLabel nullLabel1 = new JLabel("");
-    JLabel nullLabel2 = new JLabel("");
-    JLabel nullLabel3 = new JLabel("");
-    JLabel nullLabel4 = new JLabel("");
     private int numLeftToWin = 0;
     private boolean win;
 
@@ -40,10 +36,10 @@ public class GridView extends JFrame {
         
         add(scoreLabel);
         add(winLabel);
-        add(nullLabel1);
-        add(nullLabel2);
-        add(nullLabel3);
-        add(nullLabel4);
+        add(new JLabel(""));
+        add(new JLabel(""));
+        add(new JLabel(""));
+        add(new JLabel(""));
         
         for (int i = 0; i < gridSize; i++) {
 
