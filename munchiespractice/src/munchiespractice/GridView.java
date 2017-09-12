@@ -52,7 +52,7 @@ public class GridView extends JFrame {
                     if (testPrime(numbertest, 100) == true && !(tempbutton.getBackground() == new Color(0, 255, 0) || tempbutton.getBackground() == new Color(255,0,0))) {
                         Color cur = tempbutton.getBackground();
                         System.out.println(numbertest + "prime");
-                        currentScore.setScore(currentScore.getCurrentScore() + 100);
+                        currentScore.setScore(currentScore.getCurrentScore() + 1);
                         scoreLabel.setText("Score: " + currentScore.getCurrentScore());
                         numLeftToWin--;
                         System.out.println("Left: "+ numLeftToWin);
@@ -62,7 +62,7 @@ public class GridView extends JFrame {
                     } else {
                         if (tempbutton.getBackground() != Color.GREEN || tempbutton.getBackground() != Color.RED) {
                             System.out.println(numbertest + "not prime");
-                            currentScore.setScore(currentScore.getCurrentScore() - 100);
+                            currentScore.setScore(currentScore.getCurrentScore() - 1);
                             scoreLabel.setText("Score: " + currentScore.getCurrentScore());
                             tempbutton.setBackground(Color.RED);
                         }
