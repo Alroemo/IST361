@@ -3,12 +3,18 @@ package munchiespractice;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 
 public class GridView extends JFrame {
 
     private int score = 0;
     private Score currentScore = new Score();
     JLabel scoreLabel = new JLabel("Score ");
+    JLabel winLabel = new JLabel("0");
+    JLabel nullLabel1 = new JLabel("");
+    JLabel nullLabel2 = new JLabel("");
+    JLabel nullLabel3 = new JLabel("");
+    JLabel nullLabel4 = new JLabel("");
     private int numLeftToWin = 0;
     private boolean win;
 
@@ -25,13 +31,25 @@ public class GridView extends JFrame {
         pane.setLayout(new GridLayout(row, col));
         gridSize = row * col - 1;
         JButton buttons[];
-
         buttons = new JButton[50];
+        
+        //scoreLabel.setBorder(new EmptyBorder(0,15,10,15));
+        //winLabel.setBorder(new EmptyBorder(0,15,20,20));
+        //BorderLayout border = new BorderLayout();
+        //setLayout(border);
+        
+        add(scoreLabel);
+        add(winLabel);
+        add(nullLabel1);
+        add(nullLabel2);
+        add(nullLabel3);
+        add(nullLabel4);
+        
         for (int i = 0; i < gridSize; i++) {
 
             buttons[i] = new JButton(Integer.toString(i + 1));
             pane.add(buttons[i]);
-            pane.add(scoreLabel);
+            //pane.add(scoreLabel);
             
             buttons[i].addActionListener(new ActionListener() {
                 @Override
@@ -61,8 +79,8 @@ public class GridView extends JFrame {
                     ;
                     if (numLeftToWin <= 0) {
                         win = true;
-                        scoreLabel.setText("You Win!");
-                        
+                        //scoreLabel.setText("Score " + currentScore.getCurrentScore());
+                        winLabel.setText("You Win!");
                     }
                 }
             }
