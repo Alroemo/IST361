@@ -62,6 +62,7 @@ public class GridView extends JFrame {
                     if (numLeftToWin <= 0) {
                         win = true;
                         scoreLabel.setText("You Win!");
+                        
                     }
                 }
             }
