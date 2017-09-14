@@ -123,7 +123,7 @@ public class GridView extends JFrame {
         }
 
         //for playtest
-        highlightAnswers(buttons, gridSize, maxDigit); //show the answers
+        //highlightAnswers(buttons, gridSize, maxDigit); //show the answers
     }
 
     public void setPrimes(int gridSize, int maxDigit, JButton buttons[], int numRight) {
