@@ -12,99 +12,78 @@ import java.awt.Image;
  * @author bxe5056
  */
 public class Tower {
-    
+
     private String name;
     private int type;
-    private int damage; 
+    private int damage;
     private int radius;
     private int cost;
-    private Image img;
-    
-    public Tower(){
-        
+    private Image image;
+
+    public Tower() {
+
     }
 
-    /**
-     * @return the name
-     */
+    public void fire(){
+        System.out.println("DEBUG: Tower.fire() Called");
+    }
+    public void moveBullets(){
+        System.out.println("DEBUG: Tower.moveBullets() Called");
+    }
+    public void clearBullets(){
+        System.out.println("DEBUG: Tower.clearBullets() Called");
+    }
+    public boolean impact(){
+        return false;
+    }
     public String getName() {
         return name;
     }
 
-    /**
-     * @param name the name to set
-     */
     public void setName(String name) {
         this.name = name;
     }
 
-    /**
-     * @return the type
-     */
     public int getType() {
         return type;
     }
 
-    /**
-     * @param type the type to set
-     */
     public void setType(int type) {
         this.type = type;
     }
 
-    /**
-     * @return the damage
-     */
     public int getDamage() {
         return damage;
     }
 
-    /**
-     * @param damage the damage to set
-     */
     public void setDamage(int damage) {
         this.damage = damage;
     }
 
-    /**
-     * @return the radius
-     */
     public int getRadius() {
         return radius;
     }
 
-    /**
-     * @param radius the radius to set
-     */
     public void setRadius(int radius) {
         this.radius = radius;
     }
 
-    /**
-     * @return the cost
-     */
     public int getCost() {
         return cost;
     }
 
-    /**
-     * @param cost the cost to set
-     */
     public void setCost(int cost) {
         this.cost = cost;
     }
 
-    /**
-     * @return the img
-     */
     public Image getImage() {
-        return img;
+        return image;
     }
 
-    /**
-     * @param img the img to set
-     */
     public void setImage(Image img) {
-        this.img = img;
+        this.image = img;
+        //Proposed Code to Get Images
+        // ImageIcon icon = new ImageIcon("image.png");
+        // Image image = icon.getImage();
     }
 }
