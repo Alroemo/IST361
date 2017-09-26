@@ -5,10 +5,71 @@
  */
 package towerdefense;
 
+import java.io.File;
+import java.util.Scanner;
+
 /**
  *
  * @author Lauren
  */
 public class PlayerController {
     
+  PlayerUI playerView = new PlayerUI();
+  private int score =0;
+  private int money =0;
+  private int stage =1;
+  int difficulty = 1;
+  private int amountScoreChanged =0;
+  private int amountMoneyChanged =0;
+  private int amountHealthChanged =0;
+  private String name = "";
+  private int health = 0;
+  private int highScore =0;
+  
+  public PlayerController(PlayerUI playerView){
+    
+    this.playerView = playerView;
+    this.score = score;
+    this.money = money;
+    this.stage = stage;
+    this.difficulty = difficulty;
+    this.health = 100;
+    }
+    
+   public void setScore(int amountScoreChanged){
+    score = score + amountScoreChanged;
+    
+    }
+  
+   
+  public void setMoney(int amountMoneyChanged){
+      money = money + amountMoneyChanged;
+  }
+ public void setStage(){
+     stage = stage+1;
+ }
+ 
+ public void setDifficulty(int difficulty){
+     this.difficulty =difficulty;
+ }
+ 
+ public void setName(String name){
+     this.name = name;
+ }
+ public String getName(){
+     return name;
+ }
+ public void setHealth(int amountHealthChanged){
+     health = health +amountHealthChanged;
+ }
+ 
+ /*public String showHighScore(int score){
+     File file;
+    // if(file.exists()){
+        file  = new File("test.txt");
+    // }
+        }
+     */
+
 }
+
