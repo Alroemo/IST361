@@ -16,7 +16,7 @@ import javax.swing.ImageIcon;
 public class Tower {
 
     private String name;
-    private int type;
+    private int type; //Necessary?
     private int damage;
     private int radius;
     private int cost;
@@ -24,13 +24,23 @@ public class Tower {
     private Enemy target;
     private ArrayList<Bullet> bullets;
     private int[] location;
+    int targetLoc[];
+    int targetDist;
 
-    public Tower() {
-        //TODO: Instantiate local variables
+    public Tower(String name, int x, int y) {
+        this.name = name;
+        bullets = new ArrayList<>();
+        location[0] = x;
+        location[1] = y;
+        //These values may need to be determined by type
+        damage = 1; 
+        radius = 10; //Radius of 10px
+        cost = 15; //Currently arbitrary
+        image = new ImageIcon(); //TODO: add filepath      
     }
 
     public void fire(){
-        System.out.println("DEBUG: Tower.fire() Called");
+        bullets.add(new Bullet());
     }
     public void moveBullets(){
         System.out.println("DEBUG: Tower.moveBullets() Called");
@@ -93,15 +103,31 @@ public class Tower {
     }
     
     public boolean hasTarget(){
-        return false;
+        if (target != null)
+            return true;
+        else
+            return false;
     }
     
     public void setTarget(Enemy e){
-        
+        target = e;
     }
     
+    /**
+     * Converts the targets location to an integer distance and returns true
+     * if distance is less than the tower's radius of attack.
+     * @return inRange
+     */
     public boolean enemyInRange(){
-        return false;
+        boolean inRange;
+        targetLoc = target.getPosition();
+        targetDist = (int)Math.sqrt(Math.pow(targetLoc[0], 2) + Math.pow(targetLoc[1], 2));
+        if(targetDist < radius)
+            inRange = true;
+        else
+            inRange = false;
+        
+        return inRange;
     }
     
     public int[] getLocation(){
@@ -109,6 +135,7 @@ public class Tower {
     }
     
     public void setLocation(int x, int y){
-        
+        location[0] = x;
+        location[1] = y;
     }
 }

@@ -12,20 +12,36 @@ import javax.swing.ImageIcon;
  * @author nps5120
  */
 public class Bullet {
-    private int[] position;
+    private int position[] = new int[2];
+    private int targetPosition[] = new int[2];
     private ImageIcon image;
     private int speed;
     
     public Bullet(){
-        //TODO: Instantiate local variables
+        image = new ImageIcon(); //TODO: add image filepath to constructor
+        speed = 5; //TODO: update value to be slightly faster than enemy speed
     }
     
     public int[] getPosition(){
         return position;
     }
     
-    public void move(){
-        
+    /**
+     * This method moves the bullet in a cardinal direction. The direction 
+     * provided should be a lowercase string.
+     * @param direction 
+     */
+    public void move(String direction){
+        switch(direction){
+            case "north": position[1] += speed;
+                break;
+            case "south": position[1] -= speed;
+                break;
+            case "east": position[0] -= speed;
+                break;
+            case "west": position[0] += speed;
+                break;
+        }
     }
     
     public ImageIcon getImage(){
