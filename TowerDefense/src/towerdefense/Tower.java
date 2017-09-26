@@ -6,6 +6,8 @@
 package towerdefense;
 
 import java.awt.Image;
+import java.util.ArrayList;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -18,10 +20,13 @@ public class Tower {
     private int damage;
     private int radius;
     private int cost;
-    private Image image;
+    private ImageIcon image;
+    private Enemy target;
+    private ArrayList<Bullet> bullets;
+    private int[] location;
 
     public Tower() {
-
+        //TODO: Instantiate local variables
     }
 
     public void fire(){
@@ -76,14 +81,34 @@ public class Tower {
         this.cost = cost;
     }
 
-    public Image getImage() {
+    public ImageIcon getImage() {
         return image;
     }
 
-    public void setImage(Image img) {
+    public void setImage(ImageIcon img) {
         this.image = img;
         //Proposed Code to Get Images
         // ImageIcon icon = new ImageIcon("image.png");
         // Image image = icon.getImage();
+    }
+    
+    public boolean hasTarget(){
+        return false;
+    }
+    
+    public void setTarget(Enemy e){
+        
+    }
+    
+    public boolean enemyInRange(){
+        return false;
+    }
+    
+    public int[] getLocation(){
+        return this.location;
+    }
+    
+    public void setLocation(int x, int y){
+        
     }
 }
