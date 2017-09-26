@@ -5,7 +5,6 @@ import javax.swing.ImageIcon;
 
 /*
     TODO list:
-    -- Make the switch statement for each type of enemy
     -- Initialize enemy position based on the layout of the map
     -- Figure out the path for the enemy to take based on the map
     -- Finish the "move" method
@@ -31,10 +30,10 @@ public class Enemy {
     public Enemy() // number one
     {
         // with no arguments, it's a default enemy of lvl 1
-        int speed = 3;
-        int health = 10;
-        int livesLost = 1;
-        int reward = 4;
+        speed = 3;
+        health = 10;
+        livesLost = 1;
+        reward = 4;
         //initialize enemy position
         icon = new ImageIcon(/*put the path to art here*/);
         image = icon.getImage();
@@ -44,6 +43,55 @@ public class Enemy {
     public Enemy(int type, int lvl)
     {
         // do a switch statement to assign enemy type 
+        switch(type)
+        {
+            case 0: // Unpredictable
+                // do the random allocation stuff later
+                speed = 3;
+                health = 10;
+                livesLost = 1;
+                reward = 4;
+                //initialize enemy position
+                icon = new ImageIcon(/*put the path to art here*/);
+                image = icon.getImage();
+                break;
+            case 1: // Speedy
+                speed = 5;
+                health = 8;
+                livesLost = 1;
+                reward = 2;
+                //initialize enemy position
+                icon = new ImageIcon(/*put the path to art here*/);
+                image = icon.getImage();
+                break;
+            case 2: // Default
+                speed = 3;
+                health = 10;
+                livesLost = 1;
+                reward = 4;
+                //initialize enemy position
+                icon = new ImageIcon(/*put the path to art here*/);
+                image = icon.getImage();
+                break;
+            case 3: // Tank
+                speed = 1;
+                health = 30;
+                livesLost = 3;
+                reward = 10;
+                //initialize enemy position
+                icon = new ImageIcon(/*put the path to art here*/);
+                image = icon.getImage();
+                break;
+            case 4: // Boss
+                speed = 2;
+                health = 100;
+                livesLost = 5;
+                reward = 25;
+                //initialize enemy position
+                icon = new ImageIcon(/*put the path to art here*/);
+                image = icon.getImage();
+                break;
+        }
     }
     
    
@@ -85,6 +133,11 @@ public class Enemy {
     {
         //do the moving stuff here
         
+    }
+    
+    public int[] getPosition()
+    {
+        return position;
     }
     
     public Image getImage()
