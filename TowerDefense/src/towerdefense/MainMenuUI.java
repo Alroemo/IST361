@@ -1,6 +1,9 @@
 package towerdefense;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.*;
 
 @SuppressWarnings("serial")
@@ -41,8 +44,38 @@ public class MainMenuUI extends JFrame{
 		biggerPanel = new JPanel();
 
 		bEasy = new JButton("Easy");
+		bEasy.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				new GameUI();
+			} 
+			
+			
+		});
 		bMedium = new JButton("Medium");
+		bMedium.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				new GameUI();
+			} 
+			
+			
+		});
 		bHard = new JButton("Hard");
+		bHard.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				new GameUI();
+			} 
+			
+			
+		});
 		panelOne.add(bEasy);
 		panelOne.add(bMedium);
 		panelOne.add(bHard);
@@ -67,5 +100,8 @@ public class MainMenuUI extends JFrame{
 		
 		this.setVisible(true);
 	}
+	
+	
+	
 	
 }

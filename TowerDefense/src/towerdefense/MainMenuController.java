@@ -16,13 +16,13 @@ public class MainMenuController {
     
     public MainMenuController(){
         
-        theMainMenuUI = new MainMenuUI(this);
+        //theMainMenuUI = new MainMenuUI(this);
        
         
     }
     
     public void getMainMenuController(){
-        theMainMenuUI = new MainMenuUI(this);
+        //theMainMenuUI = new MainMenuUI(this);
     }
     
     public void getPlayerController(){
