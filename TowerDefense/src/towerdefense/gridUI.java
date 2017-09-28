@@ -96,9 +96,11 @@ public class gridUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         gameGrid.setBackground(new java.awt.Color(204, 204, 255));
+        gameGrid.setBorder(new javax.swing.border.MatteBorder(null));
         gameGrid.setLayout(new java.awt.GridLayout(8, 8));
 
         p1x1.setBackground(new java.awt.Color(153, 153, 255));
+        p1x1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p1x1.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p1x1Layout = new javax.swing.GroupLayout(p1x1);
@@ -114,7 +116,7 @@ public class gridUI extends javax.swing.JFrame {
 
         gameGrid.add(p1x1);
 
-        p1x2.setBackground(new java.awt.Color(255, 255, 102));
+        p1x2.setBackground(new java.awt.Color(255, 255, 153));
         p1x2.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p1x2Layout = new javax.swing.GroupLayout(p1x2);
@@ -131,6 +133,7 @@ public class gridUI extends javax.swing.JFrame {
         gameGrid.add(p1x2);
 
         p1x3.setBackground(new java.awt.Color(153, 153, 255));
+        p1x3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p1x3.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p1x3Layout = new javax.swing.GroupLayout(p1x3);
@@ -147,6 +150,7 @@ public class gridUI extends javax.swing.JFrame {
         gameGrid.add(p1x3);
 
         p1x4.setBackground(new java.awt.Color(153, 153, 255));
+        p1x4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p1x4.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p1x4Layout = new javax.swing.GroupLayout(p1x4);
@@ -163,6 +167,7 @@ public class gridUI extends javax.swing.JFrame {
         gameGrid.add(p1x4);
 
         p1x5.setBackground(new java.awt.Color(153, 153, 255));
+        p1x5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p1x5.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p1x5Layout = new javax.swing.GroupLayout(p1x5);
@@ -179,6 +184,7 @@ public class gridUI extends javax.swing.JFrame {
         gameGrid.add(p1x5);
 
         p1x6.setBackground(new java.awt.Color(153, 153, 255));
+        p1x6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p1x6.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p1x6Layout = new javax.swing.GroupLayout(p1x6);
@@ -195,6 +201,7 @@ public class gridUI extends javax.swing.JFrame {
         gameGrid.add(p1x6);
 
         p1x7.setBackground(new java.awt.Color(153, 153, 255));
+        p1x7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p1x7.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p1x7Layout = new javax.swing.GroupLayout(p1x7);
@@ -211,6 +218,7 @@ public class gridUI extends javax.swing.JFrame {
         gameGrid.add(p1x7);
 
         p1x8.setBackground(new java.awt.Color(153, 153, 255));
+        p1x8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p1x8.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p1x8Layout = new javax.swing.GroupLayout(p1x8);
@@ -227,6 +235,7 @@ public class gridUI extends javax.swing.JFrame {
         gameGrid.add(p1x8);
 
         p2x1.setBackground(new java.awt.Color(153, 153, 255));
+        p2x1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p2x1.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p2x1Layout = new javax.swing.GroupLayout(p2x1);
@@ -242,7 +251,7 @@ public class gridUI extends javax.swing.JFrame {
 
         gameGrid.add(p2x1);
 
-        p2x2.setBackground(new java.awt.Color(255, 255, 102));
+        p2x2.setBackground(new java.awt.Color(255, 255, 153));
         p2x2.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p2x2Layout = new javax.swing.GroupLayout(p2x2);
@@ -259,6 +268,7 @@ public class gridUI extends javax.swing.JFrame {
         gameGrid.add(p2x2);
 
         p2x3.setBackground(new java.awt.Color(153, 153, 255));
+        p2x3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p2x3.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p2x3Layout = new javax.swing.GroupLayout(p2x3);
@@ -275,6 +285,7 @@ public class gridUI extends javax.swing.JFrame {
         gameGrid.add(p2x3);
 
         p2x4.setBackground(new java.awt.Color(153, 153, 255));
+        p2x4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p2x4.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p2x4Layout = new javax.swing.GroupLayout(p2x4);
@@ -290,7 +301,7 @@ public class gridUI extends javax.swing.JFrame {
 
         gameGrid.add(p2x4);
 
-        p2x5.setBackground(new java.awt.Color(255, 255, 102));
+        p2x5.setBackground(new java.awt.Color(255, 255, 153));
         p2x5.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p2x5Layout = new javax.swing.GroupLayout(p2x5);
@@ -306,7 +317,7 @@ public class gridUI extends javax.swing.JFrame {
 
         gameGrid.add(p2x5);
 
-        p2x6.setBackground(new java.awt.Color(255, 255, 102));
+        p2x6.setBackground(new java.awt.Color(255, 255, 153));
         p2x6.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p2x6Layout = new javax.swing.GroupLayout(p2x6);
@@ -322,7 +333,7 @@ public class gridUI extends javax.swing.JFrame {
 
         gameGrid.add(p2x6);
 
-        p2x7.setBackground(new java.awt.Color(255, 255, 102));
+        p2x7.setBackground(new java.awt.Color(255, 255, 153));
         p2x7.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p2x7Layout = new javax.swing.GroupLayout(p2x7);
@@ -339,6 +350,7 @@ public class gridUI extends javax.swing.JFrame {
         gameGrid.add(p2x7);
 
         p2x8.setBackground(new java.awt.Color(153, 153, 255));
+        p2x8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p2x8.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p2x8Layout = new javax.swing.GroupLayout(p2x8);
@@ -355,6 +367,7 @@ public class gridUI extends javax.swing.JFrame {
         gameGrid.add(p2x8);
 
         p3x1.setBackground(new java.awt.Color(153, 153, 255));
+        p3x1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p3x1.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p3x1Layout = new javax.swing.GroupLayout(p3x1);
@@ -370,7 +383,7 @@ public class gridUI extends javax.swing.JFrame {
 
         gameGrid.add(p3x1);
 
-        p3x2.setBackground(new java.awt.Color(255, 255, 102));
+        p3x2.setBackground(new java.awt.Color(255, 255, 153));
         p3x2.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p3x2Layout = new javax.swing.GroupLayout(p3x2);
@@ -387,6 +400,7 @@ public class gridUI extends javax.swing.JFrame {
         gameGrid.add(p3x2);
 
         p3x3.setBackground(new java.awt.Color(153, 153, 255));
+        p3x3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p3x3.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p3x3Layout = new javax.swing.GroupLayout(p3x3);
@@ -403,6 +417,7 @@ public class gridUI extends javax.swing.JFrame {
         gameGrid.add(p3x3);
 
         p3x4.setBackground(new java.awt.Color(153, 153, 255));
+        p3x4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p3x4.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p3x4Layout = new javax.swing.GroupLayout(p3x4);
@@ -418,7 +433,7 @@ public class gridUI extends javax.swing.JFrame {
 
         gameGrid.add(p3x4);
 
-        p3x5.setBackground(new java.awt.Color(255, 255, 102));
+        p3x5.setBackground(new java.awt.Color(255, 255, 153));
         p3x5.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p3x5Layout = new javax.swing.GroupLayout(p3x5);
@@ -435,6 +450,7 @@ public class gridUI extends javax.swing.JFrame {
         gameGrid.add(p3x5);
 
         p3x6.setBackground(new java.awt.Color(153, 153, 255));
+        p3x6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p3x6.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p3x6Layout = new javax.swing.GroupLayout(p3x6);
@@ -450,7 +466,7 @@ public class gridUI extends javax.swing.JFrame {
 
         gameGrid.add(p3x6);
 
-        p3x7.setBackground(new java.awt.Color(255, 255, 102));
+        p3x7.setBackground(new java.awt.Color(255, 255, 153));
         p3x7.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p3x7Layout = new javax.swing.GroupLayout(p3x7);
@@ -467,6 +483,7 @@ public class gridUI extends javax.swing.JFrame {
         gameGrid.add(p3x7);
 
         p3x8.setBackground(new java.awt.Color(153, 153, 255));
+        p3x8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p3x8.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p3x8Layout = new javax.swing.GroupLayout(p3x8);
@@ -483,6 +500,7 @@ public class gridUI extends javax.swing.JFrame {
         gameGrid.add(p3x8);
 
         p4x1.setBackground(new java.awt.Color(153, 153, 255));
+        p4x1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p4x1.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p4x1Layout = new javax.swing.GroupLayout(p4x1);
@@ -498,7 +516,7 @@ public class gridUI extends javax.swing.JFrame {
 
         gameGrid.add(p4x1);
 
-        p4x2.setBackground(new java.awt.Color(255, 255, 102));
+        p4x2.setBackground(new java.awt.Color(255, 255, 153));
         p4x2.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p4x2Layout = new javax.swing.GroupLayout(p4x2);
@@ -515,6 +533,7 @@ public class gridUI extends javax.swing.JFrame {
         gameGrid.add(p4x2);
 
         p4x3.setBackground(new java.awt.Color(153, 153, 255));
+        p4x3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p4x3.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p4x3Layout = new javax.swing.GroupLayout(p4x3);
@@ -531,6 +550,7 @@ public class gridUI extends javax.swing.JFrame {
         gameGrid.add(p4x3);
 
         p4x4.setBackground(new java.awt.Color(153, 153, 255));
+        p4x4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p4x4.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p4x4Layout = new javax.swing.GroupLayout(p4x4);
@@ -546,7 +566,7 @@ public class gridUI extends javax.swing.JFrame {
 
         gameGrid.add(p4x4);
 
-        p4x5.setBackground(new java.awt.Color(255, 255, 102));
+        p4x5.setBackground(new java.awt.Color(255, 255, 153));
         p4x5.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p4x5Layout = new javax.swing.GroupLayout(p4x5);
@@ -563,6 +583,7 @@ public class gridUI extends javax.swing.JFrame {
         gameGrid.add(p4x5);
 
         p4x6.setBackground(new java.awt.Color(153, 153, 255));
+        p4x6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p4x6.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p4x6Layout = new javax.swing.GroupLayout(p4x6);
@@ -578,7 +599,7 @@ public class gridUI extends javax.swing.JFrame {
 
         gameGrid.add(p4x6);
 
-        p4x7.setBackground(new java.awt.Color(255, 255, 102));
+        p4x7.setBackground(new java.awt.Color(255, 255, 153));
         p4x7.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p4x7Layout = new javax.swing.GroupLayout(p4x7);
@@ -595,6 +616,7 @@ public class gridUI extends javax.swing.JFrame {
         gameGrid.add(p4x7);
 
         p4x8.setBackground(new java.awt.Color(153, 153, 255));
+        p4x8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p4x8.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p4x8Layout = new javax.swing.GroupLayout(p4x8);
@@ -611,6 +633,7 @@ public class gridUI extends javax.swing.JFrame {
         gameGrid.add(p4x8);
 
         p5x1.setBackground(new java.awt.Color(153, 153, 255));
+        p5x1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p5x1.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p5x1Layout = new javax.swing.GroupLayout(p5x1);
@@ -626,7 +649,7 @@ public class gridUI extends javax.swing.JFrame {
 
         gameGrid.add(p5x1);
 
-        p5x2.setBackground(new java.awt.Color(255, 255, 102));
+        p5x2.setBackground(new java.awt.Color(255, 255, 153));
         p5x2.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p5x2Layout = new javax.swing.GroupLayout(p5x2);
@@ -643,6 +666,7 @@ public class gridUI extends javax.swing.JFrame {
         gameGrid.add(p5x2);
 
         p5x3.setBackground(new java.awt.Color(153, 153, 255));
+        p5x3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p5x3.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p5x3Layout = new javax.swing.GroupLayout(p5x3);
@@ -659,6 +683,7 @@ public class gridUI extends javax.swing.JFrame {
         gameGrid.add(p5x3);
 
         p5x4.setBackground(new java.awt.Color(153, 153, 255));
+        p5x4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p5x4.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p5x4Layout = new javax.swing.GroupLayout(p5x4);
@@ -674,7 +699,7 @@ public class gridUI extends javax.swing.JFrame {
 
         gameGrid.add(p5x4);
 
-        p5x5.setBackground(new java.awt.Color(255, 255, 102));
+        p5x5.setBackground(new java.awt.Color(255, 255, 153));
         p5x5.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p5x5Layout = new javax.swing.GroupLayout(p5x5);
@@ -691,6 +716,7 @@ public class gridUI extends javax.swing.JFrame {
         gameGrid.add(p5x5);
 
         p5x6.setBackground(new java.awt.Color(153, 153, 255));
+        p5x6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p5x6.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p5x6Layout = new javax.swing.GroupLayout(p5x6);
@@ -706,7 +732,7 @@ public class gridUI extends javax.swing.JFrame {
 
         gameGrid.add(p5x6);
 
-        p5x7.setBackground(new java.awt.Color(255, 255, 102));
+        p5x7.setBackground(new java.awt.Color(255, 255, 153));
         p5x7.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p5x7Layout = new javax.swing.GroupLayout(p5x7);
@@ -723,6 +749,7 @@ public class gridUI extends javax.swing.JFrame {
         gameGrid.add(p5x7);
 
         p5x8.setBackground(new java.awt.Color(153, 153, 255));
+        p5x8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p5x8.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p5x8Layout = new javax.swing.GroupLayout(p5x8);
@@ -739,6 +766,7 @@ public class gridUI extends javax.swing.JFrame {
         gameGrid.add(p5x8);
 
         p6x1.setBackground(new java.awt.Color(153, 153, 255));
+        p6x1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p6x1.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p6x1Layout = new javax.swing.GroupLayout(p6x1);
@@ -754,7 +782,7 @@ public class gridUI extends javax.swing.JFrame {
 
         gameGrid.add(p6x1);
 
-        p6x2.setBackground(new java.awt.Color(255, 255, 102));
+        p6x2.setBackground(new java.awt.Color(255, 255, 153));
         p6x2.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p6x2Layout = new javax.swing.GroupLayout(p6x2);
@@ -771,6 +799,7 @@ public class gridUI extends javax.swing.JFrame {
         gameGrid.add(p6x2);
 
         p6x3.setBackground(new java.awt.Color(153, 153, 255));
+        p6x3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p6x3.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p6x3Layout = new javax.swing.GroupLayout(p6x3);
@@ -787,6 +816,7 @@ public class gridUI extends javax.swing.JFrame {
         gameGrid.add(p6x3);
 
         p6x4.setBackground(new java.awt.Color(153, 153, 255));
+        p6x4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p6x4.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p6x4Layout = new javax.swing.GroupLayout(p6x4);
@@ -802,7 +832,7 @@ public class gridUI extends javax.swing.JFrame {
 
         gameGrid.add(p6x4);
 
-        p6x5.setBackground(new java.awt.Color(255, 255, 102));
+        p6x5.setBackground(new java.awt.Color(255, 255, 153));
         p6x5.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p6x5Layout = new javax.swing.GroupLayout(p6x5);
@@ -819,6 +849,7 @@ public class gridUI extends javax.swing.JFrame {
         gameGrid.add(p6x5);
 
         p6x6.setBackground(new java.awt.Color(153, 153, 255));
+        p6x6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p6x6.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p6x6Layout = new javax.swing.GroupLayout(p6x6);
@@ -834,7 +865,7 @@ public class gridUI extends javax.swing.JFrame {
 
         gameGrid.add(p6x6);
 
-        p6x7.setBackground(new java.awt.Color(255, 255, 102));
+        p6x7.setBackground(new java.awt.Color(255, 255, 153));
         p6x7.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p6x7Layout = new javax.swing.GroupLayout(p6x7);
@@ -851,6 +882,7 @@ public class gridUI extends javax.swing.JFrame {
         gameGrid.add(p6x7);
 
         p6x8.setBackground(new java.awt.Color(153, 153, 255));
+        p6x8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p6x8.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p6x8Layout = new javax.swing.GroupLayout(p6x8);
@@ -867,6 +899,7 @@ public class gridUI extends javax.swing.JFrame {
         gameGrid.add(p6x8);
 
         p7x1.setBackground(new java.awt.Color(153, 153, 255));
+        p7x1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p7x1.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p7x1Layout = new javax.swing.GroupLayout(p7x1);
@@ -882,7 +915,7 @@ public class gridUI extends javax.swing.JFrame {
 
         gameGrid.add(p7x1);
 
-        p7x2.setBackground(new java.awt.Color(255, 255, 102));
+        p7x2.setBackground(new java.awt.Color(255, 255, 153));
         p7x2.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p7x2Layout = new javax.swing.GroupLayout(p7x2);
@@ -899,6 +932,7 @@ public class gridUI extends javax.swing.JFrame {
         gameGrid.add(p7x2);
 
         p7x3.setBackground(new java.awt.Color(153, 153, 255));
+        p7x3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p7x3.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p7x3Layout = new javax.swing.GroupLayout(p7x3);
@@ -915,6 +949,7 @@ public class gridUI extends javax.swing.JFrame {
         gameGrid.add(p7x3);
 
         p7x4.setBackground(new java.awt.Color(153, 153, 255));
+        p7x4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p7x4.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p7x4Layout = new javax.swing.GroupLayout(p7x4);
@@ -930,7 +965,7 @@ public class gridUI extends javax.swing.JFrame {
 
         gameGrid.add(p7x4);
 
-        p7x5.setBackground(new java.awt.Color(255, 255, 102));
+        p7x5.setBackground(new java.awt.Color(255, 255, 153));
         p7x5.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p7x5Layout = new javax.swing.GroupLayout(p7x5);
@@ -947,6 +982,7 @@ public class gridUI extends javax.swing.JFrame {
         gameGrid.add(p7x5);
 
         p7x6.setBackground(new java.awt.Color(153, 153, 255));
+        p7x6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p7x6.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p7x6Layout = new javax.swing.GroupLayout(p7x6);
@@ -962,7 +998,7 @@ public class gridUI extends javax.swing.JFrame {
 
         gameGrid.add(p7x6);
 
-        p7x7.setBackground(new java.awt.Color(255, 255, 102));
+        p7x7.setBackground(new java.awt.Color(255, 255, 153));
         p7x7.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p7x7Layout = new javax.swing.GroupLayout(p7x7);
@@ -979,6 +1015,7 @@ public class gridUI extends javax.swing.JFrame {
         gameGrid.add(p7x7);
 
         p7x8.setBackground(new java.awt.Color(153, 153, 255));
+        p7x8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p7x8.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p7x8Layout = new javax.swing.GroupLayout(p7x8);
@@ -995,6 +1032,7 @@ public class gridUI extends javax.swing.JFrame {
         gameGrid.add(p7x8);
 
         p8x1.setBackground(new java.awt.Color(153, 153, 255));
+        p8x1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p8x1.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p8x1Layout = new javax.swing.GroupLayout(p8x1);
@@ -1010,7 +1048,7 @@ public class gridUI extends javax.swing.JFrame {
 
         gameGrid.add(p8x1);
 
-        p8x2.setBackground(new java.awt.Color(255, 255, 102));
+        p8x2.setBackground(new java.awt.Color(255, 255, 153));
         p8x2.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p8x2Layout = new javax.swing.GroupLayout(p8x2);
@@ -1026,7 +1064,7 @@ public class gridUI extends javax.swing.JFrame {
 
         gameGrid.add(p8x2);
 
-        p8x3.setBackground(new java.awt.Color(255, 255, 102));
+        p8x3.setBackground(new java.awt.Color(255, 255, 153));
         p8x3.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p8x3Layout = new javax.swing.GroupLayout(p8x3);
@@ -1042,7 +1080,7 @@ public class gridUI extends javax.swing.JFrame {
 
         gameGrid.add(p8x3);
 
-        p8x4.setBackground(new java.awt.Color(255, 255, 102));
+        p8x4.setBackground(new java.awt.Color(255, 255, 153));
         p8x4.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p8x4Layout = new javax.swing.GroupLayout(p8x4);
@@ -1058,7 +1096,7 @@ public class gridUI extends javax.swing.JFrame {
 
         gameGrid.add(p8x4);
 
-        p8x5.setBackground(new java.awt.Color(255, 255, 102));
+        p8x5.setBackground(new java.awt.Color(255, 255, 153));
         p8x5.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p8x5Layout = new javax.swing.GroupLayout(p8x5);
@@ -1075,6 +1113,7 @@ public class gridUI extends javax.swing.JFrame {
         gameGrid.add(p8x5);
 
         p8x6.setBackground(new java.awt.Color(153, 153, 255));
+        p8x6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         p8x6.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p8x6Layout = new javax.swing.GroupLayout(p8x6);
@@ -1090,7 +1129,7 @@ public class gridUI extends javax.swing.JFrame {
 
         gameGrid.add(p8x6);
 
-        p8x7.setBackground(new java.awt.Color(255, 255, 102));
+        p8x7.setBackground(new java.awt.Color(255, 255, 153));
         p8x7.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p8x7Layout = new javax.swing.GroupLayout(p8x7);
@@ -1106,7 +1145,7 @@ public class gridUI extends javax.swing.JFrame {
 
         gameGrid.add(p8x7);
 
-        p8x8.setBackground(new java.awt.Color(255, 255, 102));
+        p8x8.setBackground(new java.awt.Color(255, 255, 153));
         p8x8.setPreferredSize(new java.awt.Dimension(60, 60));
 
         javax.swing.GroupLayout p8x8Layout = new javax.swing.GroupLayout(p8x8);
