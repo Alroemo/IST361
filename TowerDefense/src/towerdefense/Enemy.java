@@ -5,11 +5,12 @@ import javax.swing.ImageIcon;
 
 /*
     TODO list:
-    -- Initialize enemy position based on the layout of the map
-    -- Figure out the path for the enemy to take based on the map
-    -- Finish the "move" method
-    -- Do the image icon stuff
-    -- 
+    -- Initialize enemy position based on the layout of the map | wait on UI guys
+    -- Figure out the path for the enemy to take based on the map | Does controller do this?
+    -- Image icon stuff
+        -- Added a test icon for the default constructor
+        -- Test icon IS NOT implemented for the constructor that takes type and level
+    -- Balance enemy health and reward later
 
 */
 
@@ -23,7 +24,7 @@ public class Enemy {
     private int health;
     private int livesLost;
     private int reward;
-    private int[] position = new int[2];
+    private int[] position = new int[2]; // [x, y]
     private ImageIcon icon;
     private Image image;
     
@@ -35,9 +36,9 @@ public class Enemy {
         livesLost = 1;
         reward = 4;
         //initialize enemy position
-        icon = new ImageIcon(/*put the path to art here*/);
+        icon = new ImageIcon("testIcon.png");  // Change this when we have REAL icons
         image = icon.getImage();
-        
+                
     }
     
     public Enemy(int type, int lvl)
@@ -92,6 +93,11 @@ public class Enemy {
                 image = icon.getImage();
                 break;
         }
+        int multiplier = lvl;
+        //Change these to balance later
+        health += multiplier;
+        if(multiplier % 3 == 0)
+            reward += multiplier/3;
     }
     
    
@@ -129,9 +135,29 @@ public class Enemy {
         health -= damage;
     }
     
-    public void move()
+    /**
+     * @param dir Direction to move enemy. 0 = north, 1 = east, 2 = south, 3 = west
+     */
+    public void move(int dir)
     {
-        //do the moving stuff here
+        switch(dir)
+        {
+            case 0:
+                position[0] += 1;
+                break;
+            case 1:
+                position[1] += 1;
+                break;
+            case 2:
+                position[0] -= 1;
+                break;
+            case 3:
+                position[1] -= 1;
+                break;   
+            default:
+                System.out.println("Invalid direction parameter passed to enemy move method.");
+                break;
+        }
         
     }
     
