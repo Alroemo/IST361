@@ -40,17 +40,34 @@ public class Tower {
     }
 
     public void fire(){
-        bullets.add(new Bullet());
+        bullets.add(new Bullet(target));
     }
+    
     public void moveBullets(){
-        System.out.println("DEBUG: Tower.moveBullets() Called");
+        if(enemyInRange())
+        {
+            for(Bullet b: bullets)
+            {
+                b.move();
+            }
+        }
+        else //Bullets cannot reach enemy
+        {
+            //Clear all bullets
+            clearBullets();
+            //Target needs to be reset
+            setTarget(null);
+        }
     }
+    
     public void clearBullets(){
-        System.out.println("DEBUG: Tower.clearBullets() Called");
+        bullets.clear();
     }
+    
     public boolean impact(){
         return false;
     }
+    
     public String getName() {
         return name;
     }
