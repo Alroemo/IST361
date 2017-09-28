@@ -11,22 +11,22 @@ package towerdefense;
  */
 public class MainMenuController {
     
-    private MainMenuUI theMainMenuUI;
+ //   private MainMenuUI theMainMenuUI;
     //private PlayerController thePlayerController;
     
     public MainMenuController(){
         
-        theMainMenuUI = new MainMenuUI(this);
+ //       theMainMenuUI = new MainMenuUI(this);
        
         
     }
     
     public void getMainMenuController(){
-        theMainMenuUI = new MainMenuUI(this);
+   //     theMainMenuUI = new MainMenuUI(this);
     }
     
     public void getPlayerController(){
-        theMainMenuUI.setVisible(false);
+    //    theMainMenuUI.setVisible(false);
         //thePlayerController = new PlayerController(this);
     }
     

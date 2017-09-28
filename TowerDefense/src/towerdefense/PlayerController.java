@@ -6,6 +6,7 @@
 package towerdefense;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
@@ -80,11 +81,12 @@ public class PlayerController {
      return this.health;
  }
  
- public String showHighScore() throws IOException{
+ public String showHighScore() {
      String savedHighScore ="100";
-     File file = new File("HighScores.txt");
-     file.createNewFile();
+     File file = new File("src/HighScores.txt");
+     
   try{
+      file.createNewFile();
              Scanner scnr = new Scanner(file);
              
             while (scnr.hasNextLine()){
@@ -105,11 +107,12 @@ public class PlayerController {
      return savedHighScore;
  }
  
- public void saveHighScore(int highScore) throws IOException{
+ public void saveHighScore(int highScore) {
      File file = new File("HighScores.txt");
-     file.createNewFile();
+     
      try{
-        PrintWriter out = new PrintWriter("src\"HighScores.txt");
+         file.createNewFile();
+        PrintWriter out = new PrintWriter("src/HighScores.txt");
         out.println(highScore);
          out.close();
         } 
