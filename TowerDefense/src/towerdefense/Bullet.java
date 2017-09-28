@@ -18,8 +18,10 @@ public class Bullet {
     private int speed;
     private Enemy target;
     
-    public Bullet(Enemy target){
+    public Bullet(Enemy target, int x, int y){
         this.target = target;
+        position[0] = x;
+        position[1] = y;
         image = new ImageIcon(); //TODO: add image filepath to constructor
         speed = 5; //TODO: update value to be slightly faster than enemy speed
     }

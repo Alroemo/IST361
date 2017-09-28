@@ -23,7 +23,7 @@ public class Tower {
     private ImageIcon image;
     private Enemy target;
     private ArrayList<Bullet> bullets;
-    private int[] location;
+    private int[] location; //0 = x, 1 = y
     int targetLoc[];
     int targetDist;
 
@@ -40,7 +40,7 @@ public class Tower {
     }
 
     public void fire(){
-        bullets.add(new Bullet(target));
+        bullets.add(new Bullet(target, location[0], location[1]));
     }
     
     public void moveBullets(){
