@@ -81,41 +81,57 @@ public class PlayerController {
  }
  
  public String showHighScore() throws IOException{
-     String savedHighScore ="100";
+   String savedHighScore ="0";
+     
      File file = new File("HighScores.txt");
      file.createNewFile();
   try{
              Scanner scnr = new Scanner(file);
-             
-            while (scnr.hasNextLine()){
              savedHighScore = scnr.nextLine();
-  
-                System.out.println(savedHighScore);
-            }
-            
+   
            scnr.close();
         }
         
         catch(Exception e){
             String errString = e.getMessage();
-            System.out.println(errString);
+            
         }
     
         
      return savedHighScore;
  }
  
- public void saveHighScore(int highScore) throws IOException{
-     File file = new File("HighScores.txt");
-     file.createNewFile();
+ public void compareScore(int currentScore) 
+ {
+     
      try{
-        PrintWriter out = new PrintWriter("src\"HighScores.txt");
+     int highScore = Integer.parseInt(showHighScore());
+     
+      if(currentScore>highScore){
+         saveHighScore(currentScore);
+         
+     }
+     }
+     catch(Exception e){
+        System.out.println(e.getMessage());
+     }
+    
+    
+ } 
+ public void saveHighScore(int highScore) {
+     File file = new File("HighScores.txt");
+      
+     try{
+        file.createNewFile();
+        PrintWriter out = new PrintWriter("HighScores.txt");
         out.println(highScore);
          out.close();
+         
         } 
     
      catch(Exception e ){
      System.out.println(e.getMessage());
+    
         }
  }
  
