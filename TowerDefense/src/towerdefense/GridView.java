@@ -41,6 +41,13 @@ public class GridView extends JFrame {
         this.createGrid(12,12);
         
         this.add(gridPanel);
+        
+        PlayerUI playerPanel = new PlayerUI();
+        
+        
+        getContentPane().add(playerPanel, BorderLayout.WEST);
+        
+        
     }
     
     public void createGrid(int row, int col){
