@@ -44,38 +44,9 @@ public class MainMenuUI extends JFrame{
 		biggerPanel = new JPanel();
 
 		bEasy = new JButton("Easy");
-		bEasy.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				// TODO Auto-generated method stub
-				new GameUI();
-			} 
-			
-			
-		});
 		bMedium = new JButton("Medium");
-		bMedium.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				// TODO Auto-generated method stub
-				new GameUI();
-			} 
-			
-			
-		});
 		bHard = new JButton("Hard");
-		bHard.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				// TODO Auto-generated method stub
-				new GameUI();
-			} 
-			
-			
-		});
+		
 		panelOne.add(bEasy);
 		panelOne.add(bMedium);
 		panelOne.add(bHard);
