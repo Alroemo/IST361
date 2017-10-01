@@ -28,6 +28,10 @@ public class GridView extends JFrame {
         gridPanel = new JPanel();
         setSize(1000, 1000);
         setLayout(null);
+        
+        this.createGrid();
+        
+        this.add(gridPanel);
     }
     
     public void setBackground() {

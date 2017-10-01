@@ -5,6 +5,9 @@
  */
 package towerdefense;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author tqd5157
@@ -14,21 +17,54 @@ public class MainMenuController {
     private MainMenuUI theMainMenuUI;
     //private PlayerController thePlayerController;
     
-    public MainMenuController(){
+    public MainMenuController(MainMenuUI mv){
         
-        //theMainMenuUI = new MainMenuUI(this);
-       
+        theMainMenuUI = mv;
+        theMainMenuUI.addEasyButtonListener(new EasyListener());
+        theMainMenuUI.addMediumButtonListener(new MedListener());
+        theMainMenuUI.addHardButtonListener(new HardListener());
         
     }
     
-    public void getMainMenuController(){
-        //theMainMenuUI = new MainMenuUI(this);
+    
+    private class EasyListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            // call other easy UI
+            theMainMenuUI.dispose();
+            GridView gv = new GridView();
+            gv.setVisible(true);
+            
+        }
+        
     }
     
-    public void getPlayerController(){
-        theMainMenuUI.setVisible(false);
-        //thePlayerController = new PlayerController(this);
+    private class MedListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            theMainMenuUI.dispose();
+            GridView gv = new GridView();
+            gv.setVisible(true);
+        }
+    
+    
     }
+    
+    private class HardListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            theMainMenuUI.dispose();
+            GridView gv = new GridView();
+            gv.setVisible(true);
+        }
+    
+    
+    }
+    
+    
     
     
 }

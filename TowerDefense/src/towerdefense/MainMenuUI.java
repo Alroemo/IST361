@@ -97,11 +97,24 @@ public class MainMenuUI extends JFrame{
 		bigPanel.add(panelThree);
 		bigPanel.add(panelFour);
 		
+                this.add(bigPanel);
 		
 		this.setVisible(true);
 	}
 	
+        
+        
+        public void addEasyButtonListener(ActionListener listener){
+            bEasy.addActionListener(listener);
+        }
 	
-	
+	public void addMediumButtonListener(ActionListener listener){
+            bMedium.addActionListener(listener);
+        }
+        
+        public void addHardButtonListener(ActionListener listener){
+            bHard.addActionListener(listener);
+        }
+        
 	
 }

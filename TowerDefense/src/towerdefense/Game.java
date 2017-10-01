@@ -16,7 +16,9 @@ public class Game {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        new MainMenuUI();
+        MainMenuUI mv = new MainMenuUI();
+        MainMenuController mc = new MainMenuController(mv);
+        
     }
     
 }
