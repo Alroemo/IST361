@@ -49,7 +49,7 @@ public class MainMenuUI extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				new GameUI();
+				
 			} 
 			
 			
@@ -60,7 +60,7 @@ public class MainMenuUI extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				new GameUI();
+				
 			} 
 			
 			
@@ -71,7 +71,7 @@ public class MainMenuUI extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				new GameUI();
+				
 			} 
 			
 			

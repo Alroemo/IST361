@@ -22,6 +22,15 @@ public class GridView extends JFrame {
     JLabel mapBG = new JLabel();
     ImageIcon map = new ImageIcon("themap.gif");
     ImageIcon desk = new ImageIcon("panel.gif");
+    int enemySpawnX;
+    int enemySpawnY;
+    
+    int goalX;
+    int goalY;
+    Enemy [] enemyWave;
+    Tower [] towerCollection;
+    Bullet [] bulletCollection;
+    
     public int gridSize = 960;
       
     public GridView() {
@@ -62,7 +71,5 @@ public class GridView extends JFrame {
    			}
    		}
     }
-    
-    
     
 }
