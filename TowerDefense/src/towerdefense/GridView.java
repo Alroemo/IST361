@@ -21,7 +21,7 @@ public class GridView extends JFrame {
     JPanel gridPanel, playerPanel;
     JLabel mapBG = new JLabel();
     ImageIcon map = new ImageIcon("themap.gif");
-    ImageIcon desk = new ImageIcon("panel.gif");
+    ImageIcon desk = new ImageIcon("desk.gif");
     int enemySpawnX;
     int enemySpawnY;
     
@@ -35,34 +35,26 @@ public class GridView extends JFrame {
       
     public GridView() {
         gridPanel = new JPanel();
+        gridPanel.setLayout(new GridLayout(12,12));
         setSize(1000, 1000);
-        setLayout(null);
         
-        this.createGrid();
+        this.createGrid(12,12);
         
         this.add(gridPanel);
     }
     
-    public void setBackground() {
-        mapBG.setIcon(map);
-        mapBG.setLayout(new BorderLayout());
-        add(mapBG);
+    public void createGrid(int row, int col){
+        //create grid
+        for (int i = 0; i < row; i++) {
+            for(int j = 0; j < col; j++) {
+               JLabel label = new JLabel();
+               label.setIcon(desk);
+               this.gridPanel.add(label);
+            }
+        }
     }
-    
-//    public void createGrid(int row, int col){
-//        //create grid
-//        Container pane = getContentPane();
-//        pane.setLayout(new GridLayout(row, col));
-//        
-//        for (int i = 0; i < row; i++) {
-//            for(int j = 0; j < col; j++) {
-//               JLabel label = new JLabel();
-//               label.setIcon(desk);
-//               add(label);
-//            }
-//        }
-//    }
-//    
+  
+    /*
     public void createGrid() {
         for (int x=0; x<960; x+=80)
    		{
@@ -71,9 +63,11 @@ public class GridView extends JFrame {
    				JLabel label = new JLabel();
    				label.setIcon(desk);
    				label.setBounds(new Rectangle(x,y,80,80));
-   				add(label);
+                            
+   				this.gridPanel.add(label);
+                                
    			}
    		}
-    }
+    }*/
     
 }
