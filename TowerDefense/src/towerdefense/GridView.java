@@ -25,11 +25,8 @@ public class GridView extends JFrame {
     int enemySpawnX;
     int enemySpawnY;
     
-    int goalX;
-    int goalY;
-    Enemy [] enemyWave;
-    Tower [] towerCollection;
-    Bullet [] bulletCollection;
+    Tower[] playerTowers;
+    JLabel[][] theMainGrid = new JLabel[12][12];
     
     public int gridSize = 960;
       
@@ -38,7 +35,7 @@ public class GridView extends JFrame {
         gridPanel.setLayout(new GridLayout(12,12));
         setSize(1000, 1000);
         
-        this.createGrid(12,12);
+        this.createGrid();
         
         this.add(gridPanel);
         
@@ -50,17 +47,52 @@ public class GridView extends JFrame {
         
     }
     
-    public void createGrid(int row, int col){
+    public void createGrid(){
         //create grid
-        for (int i = 0; i < row; i++) {
-            for(int j = 0; j < col; j++) {
-               JLabel label = new JLabel();
-               label.setIcon(desk);
-               this.gridPanel.add(label);
+        for (int i = 0; i < 12; i++) {
+            for(int j = 0; j < 12; j++) {
+               theMainGrid[i][j] = new JLabel();
+               theMainGrid[i][j].setIcon(desk);
+               theMainGrid[i][j].addMouseListener(new MouseListener(){
+                   @Override
+                   public void mouseClicked(MouseEvent e) {
+                       System.out.println("it works");
+                   }
+
+                   @Override
+                   public void mousePressed(MouseEvent e) {
+                       
+                   }
+
+                   @Override
+                   public void mouseReleased(MouseEvent e) {
+                       
+                   }
+
+                   @Override
+                   public void mouseEntered(MouseEvent e) {
+                       
+                   }
+
+                   @Override
+                   public void mouseExited(MouseEvent e) {
+                       
+                   }
+               
+               });
+               
+               this.gridPanel.add(theMainGrid[i][j]);
             }
         }
     }
+    
+    public JLabel getGridLabelFor(int x, int y){
+        return theMainGrid[x][y];
+    }
+    
+    
   
+    
     /*
     public void createGrid() {
         for (int x=0; x<960; x+=80)
