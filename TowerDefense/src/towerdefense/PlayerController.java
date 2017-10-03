@@ -18,26 +18,26 @@ public class PlayerController {
     
   PlayerUI playerView = new PlayerUI();
   private int score =0;
-  private int money =0;
+  private int money =100;
   private int stage =1;
   private int difficulty = 1;
-  private int amountScoreChanged =0;
-  private int amountMoneyChanged =0;
-  private int amountHealthChanged =0;
-  private String name = "";
-  private int health = 0;
+  private int amountScoreChanged =10;
+  private int amountMoneyChanged =10;
+  private int amountHealthChanged =10;
+  private String name = "Player 1";
+  private int health = 100;
   private int highScore =0;
   
-  public PlayerController(PlayerUI playerView){
+  public PlayerController(){
     
-    this.playerView = playerView;
-    this.score = score;
-    this.money = money;
-    this.stage = stage;
-    this.difficulty = difficulty;
+    
+    this.score = 0;
+    this.money = 100;
+    this.stage = 1;
+    this.difficulty = 1;
     this.health = 100;
     }
-    
+  
    public void setScore(int amountScoreChanged){
     score = score + amountScoreChanged;
     

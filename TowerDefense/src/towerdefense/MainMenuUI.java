@@ -55,6 +55,8 @@ public class MainMenuUI extends JFrame{
 		tfPlayerName = new JTextField();
 		panelTwo.add(lPlayerName);
 		panelTwo.add(tfPlayerName);
+                
+                
 		
 		taHighscores = new JTextArea("dslkfjlasdj;kfjadsl;fj;asdjf;jasd;jf");
 		panelThree.add(taHighscores);
