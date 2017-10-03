@@ -15,8 +15,21 @@ public class PlayerUI extends javax.swing.JPanel {
     /**
      * Creates new form NewJPanel
      */
-    public PlayerUI() {
-        initComponents();
+    PlayerController thePlayerController;
+    public PlayerUI(PlayerController theParentPlayerController) {
+        initComponents(); 
+        thePlayerController = theParentPlayerController;
+        updateValues();
+        
+    }
+    
+    public void updateValues(){
+        Name.setText("Name: " + thePlayerController.getName());
+        Lives.setText("Lives:   " + thePlayerController.getHealth());
+        Score.setText("Score:   " + thePlayerController.getScore());
+        Currency.setText("Currency: " + thePlayerController.getMoney());
+        Difficulty.setText("Difficulty: " + thePlayerController.getDifficulty());
+        Wave.setText("Wave: " + thePlayerController.getStage());
     }
 
     /**

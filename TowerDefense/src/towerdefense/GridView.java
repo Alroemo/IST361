@@ -29,6 +29,7 @@ public class GridView extends JFrame {
     JLabel[][] theMainGrid = new JLabel[12][12];
     
     public int gridSize = 960;
+    PlayerController playerController;
       
     public GridView() {
         gridPanel = new JPanel();
@@ -39,8 +40,8 @@ public class GridView extends JFrame {
         
         this.add(gridPanel);
         
-        PlayerUI playerPanel = new PlayerUI();
-        
+        playerController = new PlayerController();
+        playerPanel = playerController.ui;
         
         getContentPane().add(playerPanel, BorderLayout.WEST);
         

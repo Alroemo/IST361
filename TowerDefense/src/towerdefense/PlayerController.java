@@ -15,8 +15,7 @@ import java.util.Scanner;
  * @author Lauren
  */
 public class PlayerController {
-    
-  PlayerUI playerView = new PlayerUI();
+  
   private int score =0;
   private int money =100;
   private int stage =1;
@@ -27,6 +26,7 @@ public class PlayerController {
   private String name = "Player 1";
   private int health = 100;
   private int highScore =0;
+  PlayerUI ui;
   
   public PlayerController(){
     
@@ -36,11 +36,12 @@ public class PlayerController {
     this.stage = 1;
     this.difficulty = 1;
     this.health = 100;
+    ui = new PlayerUI(this);
     }
   
    public void setScore(int amountScoreChanged){
     score = score + amountScoreChanged;
-    
+    ui.updateValues();
     }
   public int getScore(){
       return score;
@@ -48,6 +49,7 @@ public class PlayerController {
    
   public void setMoney(int amountMoneyChanged){
       money = money + amountMoneyChanged;
+      ui.updateValues();
   }
   public int getMoney(){
       return money;
@@ -55,6 +57,7 @@ public class PlayerController {
   
  public void setStage(){
      stage = stage+1;
+     ui.updateValues();
  }
  public int getStage(){
      return this.stage;
@@ -62,6 +65,7 @@ public class PlayerController {
  
  public void setDifficulty(int difficulty){
      this.difficulty =difficulty;
+     ui.updateValues();
  }
  public int getDifficulty(){
      return difficulty;
@@ -69,12 +73,14 @@ public class PlayerController {
 
  public void setName(String name){
      this.name = name;
+     ui.updateValues();
  }
  public String getName(){
      return name;
  }
  public void setHealth(int amountHealthChanged){
      health = health +amountHealthChanged;
+     ui.updateValues();
  }
  public int getHealth(){
      return this.health;
