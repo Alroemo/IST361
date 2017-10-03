@@ -28,6 +28,7 @@ public class GameController {
     {
         int waveType;
         int level = 1;
+        /* Run time errors when looped
         //Run the game
         while(gameOver == false)
         {   
@@ -47,5 +48,7 @@ public class GameController {
             //When wave is over, wait for user to press "Next Wave" button. Generate new wave with new wave type. 
             level++;
         }
+        */
+        
     }
 }

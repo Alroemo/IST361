@@ -33,6 +33,10 @@ public class GridView extends JFrame {
     PlayerController playerController;
       
     public GridView() {
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setLocationRelativeTo(null);
+	this.setTitle("Classroom Tower Defense");
+        
         gridPanel = new JPanel();
         gridPanel.setLayout(new GridBagLayout());
         c = new GridBagConstraints();
