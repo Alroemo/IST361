@@ -1,6 +1,7 @@
 package towerdefense;
 
 import java.awt.Image;
+import java.util.Random;
 import javax.swing.ImageIcon;
 
 /*
@@ -27,6 +28,7 @@ public class Enemy {
     private int[] position = new int[2]; // [x, y]
     private ImageIcon icon;
     private Image image;
+    private Random r;
     
     public Enemy() // number one
     {
@@ -48,10 +50,11 @@ public class Enemy {
         {
             case 0: // Unpredictable
                 // do the random allocation stuff later
-                speed = 3;
-                health = 10;
-                livesLost = 1;
-                reward = 4;
+                r = new Random(System.currentTimeMillis());
+                speed = r.nextInt((5 - 1) + 1) + 1;
+                health = r.nextInt((15 - 8) + 1) + 8;
+                livesLost = r.nextInt((3 - 1) + 1) + 1;
+                reward = r.nextInt((8 - 3) + 1) + 3;
                 //initialize enemy position
                 icon = new ImageIcon(/*put the path to art here*/);
                 image = icon.getImage();
