@@ -15,6 +15,7 @@ import java.awt.event.ActionListener;
 public class MainMenuController {
     
     private MainMenuUI theMainMenuUI;
+    private GridView gv;
     //private PlayerController thePlayerController;
     
     public MainMenuController(MainMenuUI mv){
@@ -33,9 +34,10 @@ public class MainMenuController {
         public void actionPerformed(ActionEvent e) {
             // call other easy UI
             theMainMenuUI.dispose();
-            GridView gv = new GridView();
+            gv = new GridView();
             gv.setVisible(true);
-            
+            GameController gc = new GameController(gv, 1);
+            gc.run();
         }
         
     }
@@ -45,8 +47,10 @@ public class MainMenuController {
         @Override
         public void actionPerformed(ActionEvent e) {
             theMainMenuUI.dispose();
-            GridView gv = new GridView();
+            gv = new GridView();
             gv.setVisible(true);
+            GameController gc = new GameController(gv, 2);
+            gc.run();
         }
     
     
@@ -57,13 +61,14 @@ public class MainMenuController {
         @Override
         public void actionPerformed(ActionEvent e) {
             theMainMenuUI.dispose();
-            GridView gv = new GridView();
+            gv = new GridView();
             gv.setVisible(true);
+            GameController gc = new GameController(gv, 3);
+            gc.run();
         }
     
     
     }
-    
     
     
     

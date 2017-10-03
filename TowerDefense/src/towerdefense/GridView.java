@@ -24,6 +24,7 @@ public class GridView extends JFrame {
     ImageIcon desk = new ImageIcon("desk.gif");
     int enemySpawnX;
     int enemySpawnY;
+    private GridBagConstraints c;
     
     Tower[] playerTowers;
     JLabel[][] theMainGrid = new JLabel[12][12];
@@ -33,7 +34,8 @@ public class GridView extends JFrame {
       
     public GridView() {
         gridPanel = new JPanel();
-        gridPanel.setLayout(new GridLayout(12,12));
+        gridPanel.setLayout(new GridBagLayout());
+        c = new GridBagConstraints();
         setSize(1000, 1000);
         
         this.createGrid();
@@ -49,40 +51,53 @@ public class GridView extends JFrame {
     }
     
     public void createGrid(){
+        //each tower will span 4x4 blocks on the grid
+        c.gridwidth = 4;
+        c.gridheight = 4;
         //create grid
         for (int i = 0; i < 12; i++) {
             for(int j = 0; j < 12; j++) {
-               theMainGrid[i][j] = new JLabel();
-               theMainGrid[i][j].setIcon(desk);
-               theMainGrid[i][j].addMouseListener(new MouseListener(){
-                   @Override
-                   public void mouseClicked(MouseEvent e) {
-                       System.out.println("it works");
-                   }
+               c.gridx = i * 4;
+               c.gridy = j * 4;
+               if(!((i == 3 && j < 10) || (j == 9 && i > 3 && i < 10) || (i == 9 && j > 4 && j < 10) || (j == 5 && i >= 10)))
+               {
+                    theMainGrid[i][j] = new JLabel();
+                    theMainGrid[i][j].setIcon(desk);
+                    theMainGrid[i][j].addMouseListener(new MouseListener(){
+                        @Override
+                        public void mouseClicked(MouseEvent e) {
+                            System.out.println("it works");
+                        }
 
-                   @Override
-                   public void mousePressed(MouseEvent e) {
-                       
-                   }
+                        @Override
+                        public void mousePressed(MouseEvent e) {
 
-                   @Override
-                   public void mouseReleased(MouseEvent e) {
-                       
-                   }
+                        }
 
-                   @Override
-                   public void mouseEntered(MouseEvent e) {
-                       
-                   }
+                        @Override
+                        public void mouseReleased(MouseEvent e) {
 
-                   @Override
-                   public void mouseExited(MouseEvent e) {
-                       
-                   }
-               
-               });
-               
-               this.gridPanel.add(theMainGrid[i][j]);
+                        }
+
+                        @Override
+                        public void mouseEntered(MouseEvent e) {
+
+                        }
+
+                        @Override
+                        public void mouseExited(MouseEvent e) {
+
+                        }
+
+                    });
+               }
+               else
+               {
+                   theMainGrid[i][j] = new JLabel();
+                   theMainGrid[i][j].setBackground(Color.WHITE);
+               }
+                           
+               this.gridPanel.add(theMainGrid[i][j], c);
             }
         }
     }
