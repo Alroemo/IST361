@@ -106,7 +106,10 @@ public class Wave {
         {
             e.move();
             if(e.offBoard())
+            {
                 enemies.remove(enemies.indexOf(e));
+                System.out.println("enemy removed");
+            }
         }
     }
     

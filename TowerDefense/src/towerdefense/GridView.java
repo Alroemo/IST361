@@ -110,6 +110,11 @@ public class GridView extends JFrame {
         return theMainGrid[x][y];
     }
     
+    public JPanel getGridPanel()
+    {
+        return this.gridPanel;
+    }
+    
     
   
     

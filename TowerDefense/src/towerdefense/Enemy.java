@@ -3,7 +3,7 @@ package towerdefense;
 import java.awt.Image;
 import java.util.Random;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
+import javax.swing.JLabel;
 
 /*
     TODO list:
@@ -20,7 +20,7 @@ import javax.swing.JButton;
  *
  * @author wbm5061
  */
-public class Enemy extends JButton{
+public class Enemy extends JLabel{
     
     private int speed;
     private int health;
@@ -40,9 +40,8 @@ public class Enemy extends JButton{
         reward = 4;
         //initialize enemy position
         icon = new ImageIcon("testIcon.png");  // Change this when we have REAL icons
-        image = icon.getImage();
-        position[0] = 12;
-        position[1] = 0;
+        this.setIcon(icon);
+        
                 
     }
     
@@ -59,8 +58,8 @@ public class Enemy extends JButton{
                 livesLost = r.nextInt((3 - 1) + 1) + 1;
                 reward = r.nextInt((8 - 3) + 1) + 3;
                 //initialize enemy position
-                icon = new ImageIcon(/*put the path to art here*/);
-                image = icon.getImage();
+                icon = new ImageIcon("enemy.gif");
+                this.setIcon(icon);
                 break;
             case 1: // Speedy
                 speed = 5;
@@ -68,8 +67,8 @@ public class Enemy extends JButton{
                 livesLost = 1;
                 reward = 2;
                 //initialize enemy position
-                icon = new ImageIcon(/*put the path to art here*/);
-                image = icon.getImage();
+                icon = new ImageIcon("enemy.gif");
+                this.setIcon(icon);
                 break;
             case 2: // Default
                 speed = 3;
@@ -77,8 +76,8 @@ public class Enemy extends JButton{
                 livesLost = 1;
                 reward = 4;
                 //initialize enemy position
-                icon = new ImageIcon(/*put the path to art here*/);
-                image = icon.getImage();
+                icon = new ImageIcon("enemy.gif");
+                this.setIcon(icon);
                 break;
             case 3: // Tank
                 speed = 1;
@@ -86,8 +85,8 @@ public class Enemy extends JButton{
                 livesLost = 3;
                 reward = 10;
                 //initialize enemy position
-                icon = new ImageIcon(/*put the path to art here*/);
-                image = icon.getImage();
+                icon = new ImageIcon("enemy.gif");
+                this.setIcon(icon);
                 break;
             case 4: // Boss
                 speed = 2;
@@ -95,8 +94,8 @@ public class Enemy extends JButton{
                 livesLost = 5;
                 reward = 25;
                 //initialize enemy position
-                icon = new ImageIcon(/*put the path to art here*/);
-                image = icon.getImage();
+                icon = new ImageIcon("enemy.gif");
+                this.setIcon(icon);
                 break;
         }
         int multiplier = lvl;
@@ -104,6 +103,9 @@ public class Enemy extends JButton{
         health += multiplier;
         if(multiplier % 3 == 0)
             reward += multiplier/3;
+        
+        position[0] = 12;
+        position[1] = 0;
     }
     
    
@@ -146,6 +148,10 @@ public class Enemy extends JButton{
      */
     public void move()
     {
+        System.out.println("move called");
+        System.out.println("enemy x position = " + position[0]);
+        System.out.println("enemy y position = " + position[1]);
+        
 //        switch(dir)
 //        {
 //            case 0:
@@ -164,14 +170,26 @@ public class Enemy extends JButton{
 //                System.out.println("Invalid direction parameter passed to enemy move method.");
 //                break;
 //        }
-        if(position[1] < 35 && position[0] == 12)
+        if(position[1] < 39 && position[0] == 12)
+        {
             position[1]++;
-        else if(position[0] < 35 && position[1] == 35)
+            System.out.println("move down");
+        }
+        else if(position[0] < 39 && position[1] == 39)
+        {
             position[0]++;
-        else if(position[1] > 20 && position[0] == 35)
+            System.out.println("move right");
+        }
+        else if(position[1] > 20 && position[0] == 39)
+        {
             position[1]--;
+            System.out.println("move up");
+        }
         else if(position[0] < 48 && position[1] == 20)
+        {
             position[0]++;
+            System.out.println("move right again");
+        }
     }
     
     public int[] getPosition()
@@ -186,8 +204,12 @@ public class Enemy extends JButton{
     
     public boolean offBoard()
     {
-        if(position[0] == 48)
-            return true;
+        System.out.println("Offboard called");
+        if(position[0] >= 48)
+        {
+            System.out.println("enemy off board");
+            return true;  
+        }
         else
             return false;
     }
