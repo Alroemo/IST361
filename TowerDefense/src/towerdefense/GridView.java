@@ -21,7 +21,7 @@ public class GridView extends JFrame {
     JPanel gridPanel, playerPanel;
     JLabel mapBG = new JLabel();
     ImageIcon map = new ImageIcon("themap.gif");
-    ImageIcon desk = new ImageIcon("desk.gif");
+    ImageIcon desk = new ImageIcon("panel.gif");
     int enemySpawnX;
     int enemySpawnY;
     private GridBagConstraints c;
@@ -40,7 +40,7 @@ public class GridView extends JFrame {
         gridPanel = new JPanel();
         gridPanel.setLayout(new GridBagLayout());
         c = new GridBagConstraints();
-        setSize(1000, 1000);
+        setSize(1500, 1200);
         
         this.createGrid();
         
