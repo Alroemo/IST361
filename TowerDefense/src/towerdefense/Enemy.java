@@ -3,6 +3,7 @@ package towerdefense;
 import java.awt.Image;
 import java.util.Random;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 
 /*
     TODO list:
@@ -19,7 +20,7 @@ import javax.swing.ImageIcon;
  *
  * @author wbm5061
  */
-public class Enemy {
+public class Enemy extends JButton{
     
     private int speed;
     private int health;
@@ -40,6 +41,8 @@ public class Enemy {
         //initialize enemy position
         icon = new ImageIcon("testIcon.png");  // Change this when we have REAL icons
         image = icon.getImage();
+        position[0] = 12;
+        position[1] = 0;
                 
     }
     
@@ -141,27 +144,34 @@ public class Enemy {
     /**
      * @param dir Direction to move enemy. 0 = north, 1 = east, 2 = south, 3 = west
      */
-    public void move(int dir)
+    public void move()
     {
-        switch(dir)
-        {
-            case 0:
-                position[0] += 1;
-                break;
-            case 1:
-                position[1] += 1;
-                break;
-            case 2:
-                position[0] -= 1;
-                break;
-            case 3:
-                position[1] -= 1;
-                break;   
-            default:
-                System.out.println("Invalid direction parameter passed to enemy move method.");
-                break;
-        }
-        
+//        switch(dir)
+//        {
+//            case 0:
+//                position[0] += 1;
+//                break;
+//            case 1:
+//                position[1] += 1;
+//                break;
+//            case 2:
+//                position[0] -= 1;
+//                break;
+//            case 3:
+//                position[1] -= 1;
+//                break;   
+//            default:
+//                System.out.println("Invalid direction parameter passed to enemy move method.");
+//                break;
+//        }
+        if(position[1] < 35 && position[0] == 12)
+            position[1]++;
+        else if(position[0] < 35 && position[1] == 35)
+            position[0]++;
+        else if(position[1] > 20 && position[0] == 35)
+            position[1]--;
+        else if(position[0] < 48 && position[1] == 20)
+            position[0]++;
     }
     
     public int[] getPosition()
@@ -174,4 +184,11 @@ public class Enemy {
         return image;
     }
     
+    public boolean offBoard()
+    {
+        if(position[0] == 48)
+            return true;
+        else
+            return false;
+    }
 }

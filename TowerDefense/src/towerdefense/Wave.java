@@ -101,4 +101,13 @@ public class Wave {
         enemies.remove(index);
     }
     
+    public void moveEnemies(){
+        for(Enemy e: enemies)
+        {
+            e.move();
+            if(e.offBoard())
+                enemies.remove(enemies.indexOf(e));
+        }
+    }
+    
 }
