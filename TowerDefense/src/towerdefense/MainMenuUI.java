@@ -21,6 +21,7 @@ public class MainMenuUI extends JFrame{
 	private JTextField tfPlayerName;
 	private JTextArea taHighscores;
 	private JTextArea taInstructions;
+
 	
 	private JPanel biggerPanel;
 	
@@ -47,6 +48,23 @@ public class MainMenuUI extends JFrame{
 		bMedium = new JButton("Medium");
 		bHard = new JButton("Hard");
 		
+                JLabel bEasyLabel = new JLabel();
+                JLabel bMediumLabel = new JLabel();
+                JLabel bHardLabel = new JLabel();
+                ImageIcon easy_button = new ImageIcon("easy_button.png");
+                ImageIcon medium_button = new ImageIcon("medium_button.png");
+                ImageIcon hard_button = new ImageIcon("hard_button.png");
+                
+                bEasyLabel.setIcon(easy_button);
+                bMediumLabel.setIcon(medium_button);
+                bHardLabel.setIcon(hard_button);
+                
+                bEasy.add(bEasyLabel);
+                bMedium.add(bMediumLabel);
+                bHard.add(bHardLabel);
+                
+                
+
 		panelOne.add(bEasy);
 		panelOne.add(bMedium);
 		panelOne.add(bHard);
