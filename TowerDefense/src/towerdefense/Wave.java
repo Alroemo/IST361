@@ -1,6 +1,7 @@
 package towerdefense;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  *
@@ -102,12 +103,14 @@ public class Wave {
     }
     
     public void moveEnemies(){
-        for(Enemy e: enemies)
+        Iterator<Enemy> iter = enemies.iterator();
+        while(iter.hasNext())
         {
-            e.move();
-            if(e.offBoard())
+            Enemy enemy = iter.next();
+            enemy.move();
+            if(enemy.offBoard())
             {
-                enemies.remove(enemies.indexOf(e));
+                iter.remove();
                 System.out.println("enemy removed");
             }
         }
