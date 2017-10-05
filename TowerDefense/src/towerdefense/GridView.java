@@ -77,6 +77,9 @@ public class GridView extends JFrame {
                             System.out.println("it works");
                             JLabel tempGrid = (JLabel) e.getSource();
                             tempGrid.setIcon(towerIcon);
+			    int towerCost = 15; //This is a static price that needs to be changed to be tower specific                           
+			    playerController.setMoney(0-towerCost);
+                            playerController.ui.updateValues();
                             tempGrid.validate();
                             tempGrid.repaint();
                         }
