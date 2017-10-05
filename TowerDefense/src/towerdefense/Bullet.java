@@ -23,7 +23,7 @@ public class Bullet extends JLabel{
         position[0] = x;
         position[1] = y;
         setIcon(new ImageIcon("desk.gif"));
-        speed = 5; //TODO: update value to be slightly faster than enemy speed
+        speed = 1; //TODO: update value to be slightly faster than enemy speed
     }
     
     public int[] getPosition(){

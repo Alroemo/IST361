@@ -147,6 +147,10 @@ public class GameController implements ActionListener{
                 {
                     System.out.println("Tower has target");
                     t.fire();
+                    for(Bullet b: t.getBullets())
+                    {
+                        gridPanel.remove(b);
+                    }
                     t.moveBullets();
                     for(Bullet b: t.getBullets())
                     {
@@ -159,8 +163,6 @@ public class GameController implements ActionListener{
             }
             //Apply damage to enemies when hit. Tower has method to check for impact
 
-            //Apply damage to player as enemies make it to the end
-            
             gridPanel.validate();
             gridPanel.repaint();
             //When wave is over, wait for user to press "Next Wave" button. Generate new wave with new wave type. 

@@ -38,6 +38,7 @@ public class MainMenuController {
             retrieveUser();
             theMainMenuUI.dispose();
             gv = new GridView(self);
+            gv.setLocationRelativeTo(null);
             gv.setVisible(true);
             GameController gc = new GameController(gv, 1, self);
             gc.run();
@@ -52,6 +53,7 @@ public class MainMenuController {
             retrieveUser();
             theMainMenuUI.dispose();
             gv = new GridView(self);
+            gv.setLocationRelativeTo(null);
             gv.setVisible(true);
             GameController gc = new GameController(gv, 2, self);
             gc.run();
@@ -67,6 +69,7 @@ public class MainMenuController {
             retrieveUser();
             theMainMenuUI.dispose();
             gv = new GridView(self);
+            gv.setLocationRelativeTo(null);
             gv.setVisible(true);
             GameController gc = new GameController(gv, 3, self);
             gc.run();
