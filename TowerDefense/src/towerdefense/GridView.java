@@ -20,16 +20,12 @@ public class GridView extends JFrame {
 //CHANGE JFRAME TO JPANEL LATER
     
     JPanel gridPanel, playerPanel;
-    JLabel mapBG = new JLabel();
     ImageIcon map = new ImageIcon("themap.gif");
     ImageIcon desk = new ImageIcon("panel.gif");
     
-    int enemySpawnX;
-    int enemySpawnY;
     private GridBagConstraints c;
     private ArrayList<Integer> newTowers = new ArrayList<>();
     
-    Tower[] playerTowers;
     JLabel[][] theMainGrid = new JLabel[12][12];
     
     public int gridSize = 960;
@@ -43,82 +39,102 @@ public class GridView extends JFrame {
 	this.setTitle("Classroom Tower Defense");
         
         gridPanel = new JPanel();
-        gridPanel.setLayout(new GridBagLayout());
-        c = new GridBagConstraints();
-        setSize(1500, 1200);
+        gridPanel.setLayout(null);
         
-        this.createGrid();
         
-        this.add(gridPanel);
         
-        playerController = new PlayerController(this);
-        playerPanel = playerController.ui;
         
-        getContentPane().add(playerPanel, BorderLayout.WEST);
         
+        
+//        
+//        gridPanel = new JPanel();
+//        gridPanel.setLayout(new GridBagLayout());
+//        c = new GridBagConstraints();
+//        setSize(1500, 1200);
+//        
+//        this.createGrid();
+//        
+//        this.add(gridPanel);
+//        
+//        playerController = new PlayerController(this);
+//        playerPanel = playerController.ui;
+//        
+//        getContentPane().add(playerPanel, BorderLayout.WEST);
+//        
         
     }
     
     public void createGrid(){
-        //each tower will span 4x4 blocks on the grid
-        c.gridwidth = 4;
-        c.gridheight = 4;
-        //create grid
-        for (int i = 0; i < 12; i++) {
-            for(int j = 0; j < 12; j++) {
-               c.gridx = i * 4;
-               c.gridy = j * 4;
-               if(!((i == 3 && j < 10) || (j == 9 && i > 3 && i < 10) || (i == 9 && j > 4 && j < 10) || (j == 5 && i >= 10)))
-               {
-                    theMainGrid[i][j] = new JLabel();
-                    theMainGrid[i][j].setIcon(desk);
-                    theMainGrid[i][j].addMouseListener(new MouseListener(){
-                        @Override
-                        public void mouseClicked(MouseEvent e) {
-                            ImageIcon towerIcon = new ImageIcon("snake_panel.gif");
-                            System.out.println("it works");
-                            JLabel tempGrid = (JLabel) e.getSource();
-                            newTowers.add((tempGrid.getX() - 314) / 20);
-                            newTowers.add((tempGrid.getY() - 28) / 20);
-                            tempGrid.setIcon(towerIcon);
-			    int towerCost = 15; //This is a static price that needs to be changed to be tower specific                           
-			    playerController.setMoney(0-towerCost);
-                            playerController.ui.updateValues();
-                            tempGrid.validate();
-                            tempGrid.repaint();
-                        }
-
-                        @Override
-                        public void mousePressed(MouseEvent e) {
-
-                        }
-
-                        @Override
-                        public void mouseReleased(MouseEvent e) {
-
-                        }
-
-                        @Override
-                        public void mouseEntered(MouseEvent e) {
-
-                        }
-
-                        @Override
-                        public void mouseExited(MouseEvent e) {
-
-                        }
-
-                    });
-               }
-               else
-               {
-                   theMainGrid[i][j] = new JLabel();
-                   theMainGrid[i][j].setBackground(Color.WHITE);
-               }
-                           
-               this.gridPanel.add(theMainGrid[i][j], c);
-            }
-        }
+        
+        // set null layout
+        
+        
+        
+        
+        
+        
+        
+//        
+//        
+//        //each tower will span 4x4 blocks on the grid
+//        c.gridwidth = 4;
+//        c.gridheight = 4;
+//        //create grid
+//        for (int i = 0; i < 12; i++) {
+//            for(int j = 0; j < 12; j++) {
+//               c.gridx = i * 4;
+//               c.gridy = j * 4;
+//               if(!((i == 3 && j < 10) || (j == 9 && i > 3 && i < 10) || (i == 9 && j > 4 && j < 10) || (j == 5 && i >= 10)))
+//               {
+//                    theMainGrid[i][j] = new JLabel();
+//                    theMainGrid[i][j].setIcon(desk);
+//                    theMainGrid[i][j].addMouseListener(new MouseListener(){
+//                        @Override
+//                        public void mouseClicked(MouseEvent e) {
+//                            ImageIcon towerIcon = new ImageIcon("snake_panel.gif");
+//                            System.out.println("it works");
+//                            JLabel tempGrid = (JLabel) e.getSource();
+//                            newTowers.add((tempGrid.getX() - 314) / 20);
+//                            newTowers.add((tempGrid.getY() - 28) / 20);
+//                            tempGrid.setIcon(towerIcon);
+//			    int towerCost = 15; //This is a static price that needs to be changed to be tower specific                           
+//			    playerController.setMoney(0-towerCost);
+//                            playerController.ui.updateValues();
+//                            tempGrid.validate();
+//                            tempGrid.repaint();
+//                        }
+//
+//                        @Override
+//                        public void mousePressed(MouseEvent e) {
+//
+//                        }
+//
+//                        @Override
+//                        public void mouseReleased(MouseEvent e) {
+//
+//                        }
+//
+//                        @Override
+//                        public void mouseEntered(MouseEvent e) {
+//
+//                        }
+//
+//                        @Override
+//                        public void mouseExited(MouseEvent e) {
+//
+//                        }
+//
+//                    });
+//               }
+//               else
+//               {
+//                   theMainGrid[i][j] = new JLabel();
+//                   theMainGrid[i][j].setBackground(Color.WHITE);
+//               }
+//                           
+//               this.gridPanel.add(theMainGrid[i][j], c);
+//            }
+//        }
     }
     
     public JLabel getGridLabelFor(int x, int y){
