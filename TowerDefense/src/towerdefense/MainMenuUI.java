@@ -36,17 +36,38 @@ public class MainMenuUI extends JFrame{
 		bigPanel.setLayout(grid);
 		
 		panelOne = new JPanel();
-		panelOne.setLayout(new BoxLayout(panelOne, BoxLayout.Y_AXIS));
+		panelOne.setLayout(new BoxLayout(panelOne, BoxLayout.PAGE_AXIS));
 		panelTwo = new JPanel();
-		panelTwo.setLayout(new BoxLayout(panelTwo, BoxLayout.Y_AXIS));
+		panelTwo.setLayout(new BoxLayout(panelTwo, BoxLayout.PAGE_AXIS));
 		panelThree = new JPanel();
+                
 		panelFour = new JPanel();
+              
 		biggerPanel = new JPanel();
+                
+                
+                
 
 		bEasy = new JButton("Easy");
+                bEasy.setFocusPainted(false);
+                bEasy.setMargin(new Insets(0, 0, 0, 0));
+             // bEasy.setContentAreaFilled(false);
+             // bEasy.setBorderPainted(false);
+                bEasy.setOpaque(false);
+                
 		bMedium = new JButton("Medium");
+                bMedium.setFocusPainted(false);
+                bMedium.setMargin(new Insets(0, 0, 0, 0));
+                bMedium.setOpaque(false);
+                
+                
 		bHard = new JButton("Hard");
+                bHard.setFocusPainted(false);
+                bHard.setMargin(new Insets(0, 0, 0, 0));
+                bHard.setOpaque(false);
 		
+                
+                
                 JLabel bEasyLabel = new JLabel();
                 JLabel bMediumLabel = new JLabel();
                 JLabel bHardLabel = new JLabel();
@@ -66,8 +87,12 @@ public class MainMenuUI extends JFrame{
 		panelOne.add(bMedium);
 		panelOne.add(bHard);
 		
+                
+                
 		lPlayerName = new JLabel("Enter Player Name... ");
-		tfPlayerName = new JTextField("Write Player Name Here");
+		tfPlayerName = new JTextField();
+                tfPlayerName.setMaximumSize(new Dimension( 250, 24 ));
+                tfPlayerName.setPreferredSize( new Dimension( 250, 24 ) );
 		panelTwo.add(lPlayerName);
 		panelTwo.add(tfPlayerName);
                 
