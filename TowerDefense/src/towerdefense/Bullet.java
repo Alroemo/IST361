@@ -15,7 +15,6 @@ import javax.swing.JLabel;
 public class Bullet extends JLabel{
     private int position[] = new int[2]; //0 = x, 1 = y
     private int targetPosition[] = new int[2]; //0 = x, 1 = y
-    private ImageIcon image;
     private int speed;
     private Enemy target;
     
@@ -23,7 +22,7 @@ public class Bullet extends JLabel{
         this.target = target;
         position[0] = x;
         position[1] = y;
-        image = new ImageIcon(); //TODO: add image filepath to constructor
+        setIcon(new ImageIcon("desk.gif"));
         speed = 5; //TODO: update value to be slightly faster than enemy speed
     }
     
@@ -53,9 +52,5 @@ public class Bullet extends JLabel{
             position[0] = (int)(speed * Math.cos(angle) + position[0]); 
             position[1] = (int)(speed * Math.sin(angle) + position[1]);
         }
-    }
-    
-    public ImageIcon getImage(){
-        return image;
     }
 }
