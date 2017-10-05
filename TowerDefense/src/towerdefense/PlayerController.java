@@ -24,9 +24,9 @@ public class PlayerController {
   private int amountMoneyChanged =10;
   private int amountHealthChanged =10;
   private String name = "Player 1";
-  private int health = 100;
+  public static int health = 100;
   private int highScore =0;
-  PlayerUI ui;
+  public static PlayerUI ui;
   GridView theGridView;
   
   public PlayerController(GridView theParentGridView){
@@ -143,6 +143,10 @@ public class PlayerController {
     
         }
  }
+ public static void updateUI(){
+     ui.updateValues();
+ }
+
  
 }
 

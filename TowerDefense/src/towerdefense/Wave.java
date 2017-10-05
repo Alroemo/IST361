@@ -112,6 +112,9 @@ public class Wave {
             {
                 iter.remove();
                 System.out.println("enemy removed");
+                PlayerController.health = PlayerController.health - 1;
+                PlayerController.updateUI();
+                System.out.println("\nHealth: " + PlayerController.health);
             }
         }
     }
