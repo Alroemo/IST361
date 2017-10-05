@@ -1,7 +1,6 @@
 package towerdefense;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
@@ -62,34 +61,52 @@ public class MainMenuUI extends JFrame{
                 bEasy.add(bEasyLabel);
                 bMedium.add(bMediumLabel);
                 bHard.add(bHardLabel);
-                
-                
 
 		panelOne.add(bEasy);
 		panelOne.add(bMedium);
 		panelOne.add(bHard);
 		
 		lPlayerName = new JLabel("Enter Player Name... ");
-		tfPlayerName = new JTextField();
+		tfPlayerName = new JTextField("Write Player Name Here");
 		panelTwo.add(lPlayerName);
 		panelTwo.add(tfPlayerName);
                 
                 
+		JLabel highscores = new JLabel("High Scores!");
+		taHighscores = new JTextArea("Write High Scores Here");
+		panelThree.add(highscores);
+                panelThree.add(taHighscores);
+                
 		
-		taHighscores = new JTextArea("dslkfjlasdj;kfjadsl;fj;asdjf;jasd;jf");
-		panelThree.add(taHighscores);
-		
-		taInstructions = new JTextArea("dsfljsdal;fjkasdjfladsl;kfjads;fasdkfa");
-		panelFour.add(taInstructions);
-		
-		
+                JLabel instructions = new JLabel("Instructions!");
+		taInstructions = new JTextArea("Write Instructions Here");
+		panelFour.add(instructions);
+                panelFour.add(taInstructions);
+                
+                
+                this.setLayout(new GridLayout(2,0));
+                
+                
+                JPanel titlePanel = new JPanel();
+                // add the image icon here
+                JLabel titleWords = new JLabel();
+                ImageIcon titleWordBack = new ImageIcon("Title.gif");
+                titleWords.setIcon(titleWordBack);
+                
+                titlePanel.add(titleWords);
+                
+                this.add(titlePanel);
+                
 		bigPanel.add(panelOne);
 		bigPanel.add(panelTwo);
 		bigPanel.add(panelThree);
 		bigPanel.add(panelFour);
-		
-                this.add(bigPanel);
-		
+                
+                
+		this.add(bigPanel);
+                
+                
+                
 		this.setVisible(true);
 	}
 	
