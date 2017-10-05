@@ -98,7 +98,7 @@ public class MainMenuUI extends JFrame{
                 
                 
 		JLabel highscores = new JLabel("High Scores!");
-		taHighscores = new JTextArea("Write High Scores Here");
+		taHighscores = new JTextArea("Write High Score Here");
 		panelThree.add(highscores);
                 panelThree.add(taHighscores);
                 
