@@ -71,7 +71,7 @@ public class GridView extends JFrame {
                     theMainGrid[i][j].addMouseListener(new MouseListener(){
                         @Override
                         public void mouseClicked(MouseEvent e) {
-                            ImageIcon towerIcon = new ImageIcon("ypanel.gif");
+                            ImageIcon towerIcon = new ImageIcon("snake_panel.gif");
                             System.out.println("it works");
                             JLabel tempGrid = (JLabel) e.getSource();
                             tempGrid.setIcon(towerIcon);
