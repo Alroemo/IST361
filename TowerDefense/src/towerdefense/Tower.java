@@ -23,7 +23,7 @@ public class Tower {
     private ImageIcon image;
     private Enemy target;
     private ArrayList<Bullet> bullets;
-    private int[] location; //0 = x, 1 = y
+    private int[] location = new int[2]; //0 = x, 1 = y
     int targetLoc[];
     int targetDist;
 
@@ -44,7 +44,7 @@ public class Tower {
     }
     
     public void moveBullets(){
-        if(enemyInRange())
+        if(enemyInRange(this.target))
         {
             for(Bullet b: bullets)
             {
@@ -135,10 +135,10 @@ public class Tower {
      * if distance is less than the tower's radius of attack.
      * @return inRange
      */
-    public boolean enemyInRange(){
+    public boolean enemyInRange(Enemy target){
         boolean inRange;
         targetLoc = target.getPosition();
-        targetDist = (int)Math.sqrt(Math.pow(targetLoc[0], 2) + Math.pow(targetLoc[1], 2));
+        targetDist = (int)Math.sqrt(Math.pow(targetLoc[0] - location[0], 2) + Math.pow(targetLoc[1] - location[1], 2));
         if(targetDist < radius)
             inRange = true;
         else
@@ -154,5 +154,10 @@ public class Tower {
     public void setLocation(int x, int y){
         location[0] = x;
         location[1] = y;
+    }
+    
+    public ArrayList<Bullet> getBullets()
+    {
+        return this.bullets;
     }
 }

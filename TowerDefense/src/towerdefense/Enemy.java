@@ -213,4 +213,10 @@ public class Enemy extends JLabel{
         else
             return false;
     }
+    
+    public void setPosition(int x, int y)
+    {
+        position[0] = x;
+        position[1] = y;
+    }
 }

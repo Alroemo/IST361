@@ -7,6 +7,7 @@ package towerdefense;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
@@ -26,6 +27,7 @@ public class GridView extends JFrame {
     int enemySpawnX;
     int enemySpawnY;
     private GridBagConstraints c;
+    private ArrayList<Integer> newTowers = new ArrayList<>();
     
     Tower[] playerTowers;
     JLabel[][] theMainGrid = new JLabel[12][12];
@@ -76,6 +78,8 @@ public class GridView extends JFrame {
                             ImageIcon towerIcon = new ImageIcon("snake_panel.gif");
                             System.out.println("it works");
                             JLabel tempGrid = (JLabel) e.getSource();
+                            newTowers.add((tempGrid.getX() - 314) / 20);
+                            newTowers.add((tempGrid.getY() - 28) / 20);
                             tempGrid.setIcon(towerIcon);
 			    int towerCost = 15; //This is a static price that needs to be changed to be tower specific                           
 			    playerController.setMoney(0-towerCost);
@@ -126,5 +130,9 @@ public class GridView extends JFrame {
         return this.gridPanel;
     }
     
+    public ArrayList<Integer> getNewTowers()
+    {
+        return this.newTowers;
+    }
 
 }

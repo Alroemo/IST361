@@ -6,12 +6,13 @@
 package towerdefense;
 
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 /**
  *
  * @author nps5120
  */
-public class Bullet {
+public class Bullet extends JLabel{
     private int position[] = new int[2]; //0 = x, 1 = y
     private int targetPosition[] = new int[2]; //0 = x, 1 = y
     private ImageIcon image;

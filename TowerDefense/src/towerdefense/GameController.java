@@ -3,6 +3,8 @@ package towerdefense;
 import java.awt.GridBagConstraints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Iterator;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
@@ -30,6 +32,8 @@ public class GameController implements ActionListener{
     private int level = 1;
     private int enemyPosition[] = new int[2];
     MainMenuController theMainMenuController;
+    private int enemyCount;
+    private ArrayList<Tower> towers = new ArrayList<>();    
         
     
     
@@ -54,20 +58,8 @@ public class GameController implements ActionListener{
         waveType = (int)(Math.random() * 4);
         //Generate wave
         wave = new Wave(level, waveType);
-        c.gridheight = 4;
-        c.gridwidth = 4;
-        for(Enemy e: wave.getEnemies())
-        {
-            //Set constraints
-            enemyPosition = e.getPosition();
-            c.gridx = enemyPosition[0];
-            c.gridy = enemyPosition[1];
-            gridPanel.add(e, c);
-            System.out.println("enemy added");
-        }
-        gridPanel.validate();
-        gridPanel.repaint();
         waveOver = false;
+        enemyCount = 0;
     }
 
     @Override
@@ -84,6 +76,28 @@ public class GameController implements ActionListener{
         }
         else if(action == clock)
         {
+            if(enemyCount < wave.getEnemies().size())
+            {
+                c.gridheight = 4;
+                c.gridwidth = 4;
+
+                //Set constraints
+                wave.getEnemies().get(enemyCount).setPosition(12, 0);
+                enemyPosition = wave.getEnemies().get(enemyCount).getPosition();
+                c.gridx = enemyPosition[0];
+                c.gridy = enemyPosition[1];
+                gridPanel.add(wave.getEnemies().get(enemyCount), c);
+                enemyCount++;
+                System.out.println("enemy added");
+            }
+            //Account for any new towers
+            Iterator<Integer> iter = gridView.getNewTowers().iterator();
+            while(iter.hasNext())
+            {
+                towers.add(new Tower("tower", iter.next(), iter.next()));
+            }
+            gridView.getNewTowers().clear();
+            
             c.gridheight = 4;
             c.gridwidth = 4;
             
@@ -103,22 +117,56 @@ public class GameController implements ActionListener{
                 c.gridy = enemyPosition[1];
                 gridPanel.add(enemy, c);
             }
+            
             gridPanel.validate();
             gridPanel.repaint();
-            System.out.println(wave.getEnemies().size());
+            
 
             //As enemies move into towers' ranges, target enemies. Towers will automatically drop targets when out of range
-
+            for(Tower t: towers)
+            {
+                boolean targetFound = false;
+                int enemyIndex = 0;
+                while(targetFound == false && enemyIndex < wave.getEnemies().size())
+                {
+                    if(t.enemyInRange(wave.getEnemies().get(enemyIndex)))
+                    {
+                        t.setTarget(wave.getEnemies().get(enemyIndex));
+                        targetFound = true;
+                    }
+                    else
+                        enemyIndex++;
+                }
+            }
             //Use tower method to fire bullets at enemies
-
+            c.gridheight = 1;
+            c.gridwidth = 1;
+            for(Tower t: towers)
+            {
+                if(t.hasTarget())
+                {
+                    System.out.println("Tower has target");
+                    t.fire();
+                    t.moveBullets();
+                    for(Bullet b: t.getBullets())
+                    {
+                        int bulletLoc[] = b.getPosition();
+                        c.gridx = bulletLoc[0];
+                        c.gridy = bulletLoc[1];
+                        gridPanel.add(b, c);
+                    }
+                }
+            }
             //Apply damage to enemies when hit. Tower has method to check for impact
 
             //Apply damage to player as enemies make it to the end
-
+            
+            gridPanel.validate();
+            gridPanel.repaint();
             //When wave is over, wait for user to press "Next Wave" button. Generate new wave with new wave type. 
-            if(wave.getEnemies().size() == 0){
+            if(wave.getEnemies().size() == 0)
                 waveOver = true;
-            }
+            
             
         }
     }
