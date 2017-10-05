@@ -32,8 +32,10 @@ public class GridView extends JFrame {
     
     public int gridSize = 960;
     PlayerController playerController;
-      
-    public GridView() {
+    MainMenuController theMainMenuController;
+
+    public GridView(MainMenuController theParentMainMenuController) {
+        theMainMenuController = theParentMainMenuController;
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
 	this.setTitle("Classroom Tower Defense");
@@ -47,7 +49,7 @@ public class GridView extends JFrame {
         
         this.add(gridPanel);
         
-        playerController = new PlayerController();
+        playerController = new PlayerController(this);
         playerPanel = playerController.ui;
         
         getContentPane().add(playerPanel, BorderLayout.WEST);

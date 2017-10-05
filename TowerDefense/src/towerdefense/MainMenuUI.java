@@ -149,5 +149,8 @@ public class MainMenuUI extends JFrame{
             bHard.addActionListener(listener);
         }
         
+        public String getUsername(){
+            return tfPlayerName.getText();
+        }
 	
 }

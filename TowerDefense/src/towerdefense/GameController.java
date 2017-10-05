@@ -29,11 +29,13 @@ public class GameController implements ActionListener{
     private int waveType;
     private int level = 1;
     private int enemyPosition[] = new int[2];
+    MainMenuController theMainMenuController;
         
     
     
-    public GameController(GridView gridView, int difficulty)
+    public GameController(GridView gridView, int difficulty, MainMenuController theParentMainMenuController)
     {
+        theMainMenuController = theParentMainMenuController;
         this.gridView = gridView;
         this.gridPanel = this.gridView.getGridPanel();
         this.difficulty = difficulty;
@@ -114,9 +116,9 @@ public class GameController implements ActionListener{
             //Apply damage to player as enemies make it to the end
 
             //When wave is over, wait for user to press "Next Wave" button. Generate new wave with new wave type. 
-            if(wave.getEnemies().size() == 0)
+            if(wave.getEnemies().size() == 0){
                 waveOver = true;
-            
+            }
             
         }
     }

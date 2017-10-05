@@ -16,11 +16,13 @@ public class MainMenuController {
     
     private MainMenuUI theMainMenuUI;
     private GridView gv;
-    //private PlayerController thePlayerController;
+    public String username;
+    MainMenuController self;
     
-    public MainMenuController(MainMenuUI mv){
-        
-        theMainMenuUI = mv;
+    
+    public MainMenuController(){
+        self = this;
+        theMainMenuUI = new MainMenuUI();
         theMainMenuUI.addEasyButtonListener(new EasyListener());
         theMainMenuUI.addMediumButtonListener(new MedListener());
         theMainMenuUI.addHardButtonListener(new HardListener());
@@ -33,10 +35,11 @@ public class MainMenuController {
         @Override
         public void actionPerformed(ActionEvent e) {
             // call other easy UI
+            retrieveUser();
             theMainMenuUI.dispose();
-            gv = new GridView();
+            gv = new GridView(self);
             gv.setVisible(true);
-            GameController gc = new GameController(gv, 1);
+            GameController gc = new GameController(gv, 1, self);
             gc.run();
         }
         
@@ -46,10 +49,11 @@ public class MainMenuController {
 
         @Override
         public void actionPerformed(ActionEvent e) {
+            retrieveUser();
             theMainMenuUI.dispose();
-            gv = new GridView();
+            gv = new GridView(self);
             gv.setVisible(true);
-            GameController gc = new GameController(gv, 2);
+            GameController gc = new GameController(gv, 2, self);
             gc.run();
         }
     
@@ -60,16 +64,19 @@ public class MainMenuController {
 
         @Override
         public void actionPerformed(ActionEvent e) {
+            retrieveUser();
             theMainMenuUI.dispose();
-            gv = new GridView();
+            gv = new GridView(self);
             gv.setVisible(true);
-            GameController gc = new GameController(gv, 3);
+            GameController gc = new GameController(gv, 3, self);
             gc.run();
         }
     
     
     }
-    
+    public void retrieveUser() {
+        username = theMainMenuUI.getUsername();        
+    }
     
     
 }

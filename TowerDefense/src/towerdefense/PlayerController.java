@@ -27,15 +27,18 @@ public class PlayerController {
   private int health = 100;
   private int highScore =0;
   PlayerUI ui;
+  GridView theGridView;
   
-  public PlayerController(){
+  public PlayerController(GridView theParentGridView){
     
+    theGridView = theParentGridView;  
     
     this.score = 0;
     this.money = 100;
     this.stage = 1;
     this.difficulty = 1;
     this.health = 100;
+    name = theGridView.theMainMenuController.username;
     ui = new PlayerUI(this);
     }
   
