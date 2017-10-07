@@ -104,7 +104,7 @@ public class Enemy extends JLabel{
         if(multiplier % 3 == 0)
             reward += multiplier/3;
         
-        position[0] = 12;
+        position[0] = 160;
         position[1] = 0;
     }
     
@@ -152,42 +152,24 @@ public class Enemy extends JLabel{
         System.out.println("enemy x position = " + position[0]);
         System.out.println("enemy y position = " + position[1]);
         
-//        switch(dir)
-//        {
-//            case 0:
-//                position[0] += 1;
-//                break;
-//            case 1:
-//                position[1] += 1;
-//                break;
-//            case 2:
-//                position[0] -= 1;
-//                break;
-//            case 3:
-//                position[1] -= 1;
-//                break;   
-//            default:
-//                System.out.println("Invalid direction parameter passed to enemy move method.");
-//                break;
-//        }
-        if(position[1] < 39 && position[0] == 12)
+        if(position[1] < 720 && position[0] >= 240)
         {
-            position[1]++;
+            position[1] += speed;
             System.out.println("move down");
         }
-        else if(position[0] < 39 && position[1] == 39)
+        else if(position[0] < 640 && position[1] >= 720)
         {
-            position[0]++;
+            position[0] += speed;
             System.out.println("move right");
         }
-        else if(position[1] > 20 && position[0] == 39)
+        else if(position[1] > 480 && position[0] >= 640)
         {
-            position[1]--;
+            position[1] -= speed;
             System.out.println("move up");
         }
-        else if(position[0] < 48 && position[1] == 20)
+        else if(position[0] < 960 && position[1] >= 480)
         {
-            position[0]++;
+            position[0] += speed;
             System.out.println("move right again");
         }
     }
@@ -205,7 +187,7 @@ public class Enemy extends JLabel{
     public boolean offBoard()
     {
         System.out.println("Offboard called");
-        if(position[0] >= 48)
+        if(position[0] >= 960)
         {
             System.out.println("enemy off board");
             return true;  

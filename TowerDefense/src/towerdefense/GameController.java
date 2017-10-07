@@ -26,7 +26,6 @@ public class GameController implements ActionListener{
     private boolean gameOver;
     private boolean waveOver;
     private Wave wave;
-    private GridBagConstraints c = new GridBagConstraints();
     private Timer clock;
     private int waveType;
     private int level = 1;
@@ -78,15 +77,11 @@ public class GameController implements ActionListener{
         {
             if(enemyCount < wave.getEnemies().size())
             {
-                c.gridheight = 4;
-                c.gridwidth = 4;
-
-                //Set constraints
-                wave.getEnemies().get(enemyCount).setPosition(12, 0);
-                enemyPosition = wave.getEnemies().get(enemyCount).getPosition();
-                c.gridx = enemyPosition[0];
-                c.gridy = enemyPosition[1];
-                gridPanel.add(wave.getEnemies().get(enemyCount), c);
+                Enemy currentEnemy = wave.getEnemies().get(enemyCount);
+                currentEnemy.setPosition(240, 0);
+                enemyPosition = currentEnemy.getPosition();
+                gridPanel.add(currentEnemy);
+                currentEnemy.setBounds(enemyPosition[0], enemyPosition[1], 64, 64);
                 enemyCount++;
                 System.out.println("enemy added");
             }
@@ -97,9 +92,6 @@ public class GameController implements ActionListener{
                 towers.add(new Tower("tower", iter.next(), iter.next()));
             }
             gridView.getNewTowers().clear();
-            
-            c.gridheight = 4;
-            c.gridwidth = 4;
             
             //Move enemies through path
             for(Enemy enemy: wave.getEnemies())
@@ -113,9 +105,8 @@ public class GameController implements ActionListener{
             {
                 //Set constraints
                 enemyPosition = enemy.getPosition();
-                c.gridx = enemyPosition[0];
-                c.gridy = enemyPosition[1];
-                gridPanel.add(enemy, c);
+                gridPanel.add(enemy);
+                enemy.setBounds(enemyPosition[0], enemyPosition[1], 64, 64);
             }
             
             gridPanel.validate();
@@ -139,8 +130,6 @@ public class GameController implements ActionListener{
                 }
             }
             //Use tower method to fire bullets at enemies
-            c.gridheight = 1;
-            c.gridwidth = 1;
             for(Tower t: towers)
             {
                 if(t.hasTarget())
@@ -155,9 +144,8 @@ public class GameController implements ActionListener{
                     for(Bullet b: t.getBullets())
                     {
                         int bulletLoc[] = b.getPosition();
-                        c.gridx = bulletLoc[0];
-                        c.gridy = bulletLoc[1];
-                        gridPanel.add(b, c);
+                        gridPanel.add(b);
+                        b.setBounds(bulletLoc[0], bulletLoc[1], 5, 5);
                     }
                 }
             }
