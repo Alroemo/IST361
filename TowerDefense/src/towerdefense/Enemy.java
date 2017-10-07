@@ -62,7 +62,7 @@ public class Enemy extends JLabel{
                 this.setIcon(icon);
                 break;
             case 1: // Speedy
-                speed = 5;
+                speed = 8;
                 health = 8;
                 livesLost = 1;
                 reward = 2;
@@ -71,7 +71,7 @@ public class Enemy extends JLabel{
                 this.setIcon(icon);
                 break;
             case 2: // Default
-                speed = 3;
+                speed = 6;
                 health = 10;
                 livesLost = 1;
                 reward = 4;
@@ -80,7 +80,7 @@ public class Enemy extends JLabel{
                 this.setIcon(icon);
                 break;
             case 3: // Tank
-                speed = 1;
+                speed = 4;
                 health = 30;
                 livesLost = 3;
                 reward = 10;
@@ -89,7 +89,7 @@ public class Enemy extends JLabel{
                 this.setIcon(icon);
                 break;
             case 4: // Boss
-                speed = 2;
+                speed = 5;
                 health = 100;
                 livesLost = 5;
                 reward = 25;
@@ -152,22 +152,22 @@ public class Enemy extends JLabel{
         System.out.println("enemy x position = " + position[0]);
         System.out.println("enemy y position = " + position[1]);
         
-        if(position[1] < 720 && position[0] >= 240)
+        if(position[1] < 720 && position[0] == 240)
         {
             position[1] += speed;
             System.out.println("move down");
         }
-        else if(position[0] < 640 && position[1] >= 720)
+        else if(position[0] < 720 && position[1] >= 720)
         {
             position[0] += speed;
             System.out.println("move right");
         }
-        else if(position[1] > 480 && position[0] >= 640)
+        else if(position[1] > 400 && position[0] >= 720)
         {
             position[1] -= speed;
             System.out.println("move up");
         }
-        else if(position[0] < 960 && position[1] >= 480)
+        else if(position[0] < 960 && position[1] <= 400)
         {
             position[0] += speed;
             System.out.println("move right again");

@@ -138,6 +138,12 @@ public class GameController implements ActionListener{
                     t.fire();
                     for(Bullet b: t.getBullets())
                     {
+                        int bulletLoc[] = b.getPosition();
+                        gridPanel.add(b);
+                        b.setBounds(bulletLoc[0], bulletLoc[1], 5, 5);
+                    }
+                    for(Bullet b: t.getBullets())
+                    {
                         gridPanel.remove(b);
                     }
                     t.moveBullets();
