@@ -5,6 +5,7 @@
  */
 package towerdefense;
 
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 /**
@@ -17,8 +18,10 @@ public class PlayerUI extends javax.swing.JPanel {
     /**
      * Creates new form NewJPanel
      */
+    public ImageIcon currentTurretIcon;
     PlayerController thePlayerController;
     public PlayerUI(PlayerController theParentPlayerController) {
+        currentTurretIcon = new ImageIcon("snake_panel.gif");
         initComponents(); 
         thePlayerController = theParentPlayerController;
         updateValues();
@@ -71,17 +74,35 @@ public class PlayerUI extends javax.swing.JPanel {
 
         Damage1.setText("Damage:");
 
+        Image1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                Image1MousePressed(evt);
+            }
+        });
+
         Tower2.setText("Tower 2");
 
         Range2.setText("Range:");
 
         Damage2.setText("Damage:");
 
+        Image2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                Image2MousePressed(evt);
+            }
+        });
+
         Tower3.setText("Tower 3");
 
         Range3.setText("Range:");
 
         Damage3.setText("Damage:");
+
+        Image3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                Image3MousePressed(evt);
+            }
+        });
 
         jButton1.setText("Next Wave");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -215,6 +236,30 @@ public class PlayerUI extends javax.swing.JPanel {
         thePlayerController.setStage();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void Image1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Image1MousePressed
+        // TODO add your handling code here:
+        ImageIcon curTurret = new ImageIcon("snake_panel.gif");
+        setCurrentTurret(curTurret);
+    }//GEN-LAST:event_Image1MousePressed
+
+    private void Image2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Image2MousePressed
+        // TODO add your handling code here:
+        ImageIcon curTurret = new ImageIcon("psy_panel.gif");
+        setCurrentTurret(curTurret);
+    }//GEN-LAST:event_Image2MousePressed
+
+    private void Image3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Image3MousePressed
+        // TODO add your handling code here:
+        ImageIcon curTurret = new ImageIcon("punch_panel.gif");
+        setCurrentTurret(curTurret);
+    }//GEN-LAST:event_Image3MousePressed
+
+    public void setCurrentTurret(ImageIcon newIco){
+        currentTurretIcon = newIco;
+    }
+    public ImageIcon getTurretIcon(){
+        return currentTurretIcon;
+    }
     public void populateUI()
     {
         

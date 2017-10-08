@@ -173,6 +173,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="Image1">
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Image1MousePressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="Tower2">
       <Properties>
@@ -190,6 +193,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="Image2">
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Image2MousePressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="Tower3">
       <Properties>
@@ -207,6 +213,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="Image3">
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Image3MousePressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
