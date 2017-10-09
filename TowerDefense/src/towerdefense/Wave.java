@@ -97,9 +97,16 @@ public class Wave {
         return enemies;
     }
     
-    public void killEnemy(int index)
+    public void killEnemy(Enemy toKill)
     {
-        enemies.remove(index);
+//        int index = enemies.indexOf(toKill);
+//        if(index > -1)
+//            enemies.get(index).setPosition(1000, 0);
+        
+        System.out.println(enemies.size());
+        enemies.remove(toKill);
+        System.out.println(enemies.size());
+      
     }
     
     public void moveEnemies(){

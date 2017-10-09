@@ -140,7 +140,6 @@ public class GameController implements ActionListener{
             {
                 if(t.hasTarget())
                 {
-                    System.out.println("Tower has target");
                     t.fire();
                     for(Bullet b: t.getBullets())
                     {
@@ -158,10 +157,21 @@ public class GameController implements ActionListener{
                         int bulletLoc[] = b.getPosition();
                         gridPanel.add(b);
                         b.setBounds(bulletLoc[0], bulletLoc[1], 5, 5);
+                        //check for impact here. 
+                        
+                    }
+                    int impact = t.impact();
+                    if(impact > -1) // remove enemy and reward player
+                    {
+                        //System.out.println(impact);
+//                        int reward = wave.getEnemies().get(impact).getReward();
+//                        gridView.getPlayerController().setMoney(reward);
+                        wave.killEnemy(t.getBullets().get(impact).getTarget());
+                        //remove bullet
                     }
                 }
             }
-            //Apply damage to enemies when hit. Tower has method to check for impact
+            
 
             gridPanel.validate();
             gridPanel.repaint();

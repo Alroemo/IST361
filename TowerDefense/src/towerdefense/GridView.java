@@ -27,7 +27,7 @@ public class GridView extends JFrame {
     JLabel[][] theMainGrid = new JLabel[12][12];
     
     public int gridSize = 960;
-    PlayerController playerController;
+    private PlayerController playerController;
     MainMenuController theMainMenuController;
 
     public GridView(MainMenuController theParentMainMenuController) {
@@ -68,20 +68,15 @@ public class GridView extends JFrame {
                             int towerCost = 15;
                             //ImageIcon towerIcon = new ImageIcon("snake_panel.gif");
                             //System.out.println("it works");
-                            if(playerController.getMoney() >= towerCost)
-                            {
-                                ImageIcon towerIcon = playerController.ui.getTurretIcon();
-                                JLabel tempGrid = (JLabel) e.getSource();
-                                newTowers.add((tempGrid.getX()));
-                                newTowers.add((tempGrid.getY()));
-                                tempGrid.setIcon(towerIcon);
-                                //This is a static price that needs to be changed to be tower specific                           
-                                playerController.setMoney(0-towerCost);
-                                playerController.ui.updateValues();
-                                tempGrid.validate();
-                               tempGrid.repaint();
-                        
-                            }
+                            ImageIcon towerIcon = getPlayerController().ui.getTurretIcon();
+                            JLabel tempGrid = (JLabel) e.getSource();
+                            newTowers.add((tempGrid.getX()));
+                            newTowers.add((tempGrid.getY()));
+                            tempGrid.setIcon(towerIcon);
+			    getPlayerController().setMoney(0-towerCost);
+                            getPlayerController().ui.updateValues();
+                            tempGrid.validate();
+                            tempGrid.repaint();
                         }
                         @Override
                         public void mousePressed(MouseEvent e) {
@@ -137,6 +132,13 @@ public class GridView extends JFrame {
     public ArrayList<Integer> getNewTowers()
     {
         return this.newTowers;
+    }
+
+    /**
+     * @return the playerController
+     */
+    public PlayerController getPlayerController() {
+        return playerController;
     }
 
 }

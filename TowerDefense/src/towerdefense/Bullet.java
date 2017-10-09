@@ -23,8 +23,8 @@ public class Bullet extends JLabel{
         this.target = target;
         position[0] = x;
         position[1] = y;
-        setIcon(new ImageIcon("desk.gif"));
-        speed = 1; //TODO: update value to be slightly faster than enemy speed
+        setIcon(new ImageIcon("psyshock.gif"));
+        speed = 10; //TODO: update value to be slightly faster than enemy speed
     }
     
     public int[] getPosition(){
@@ -35,7 +35,7 @@ public class Bullet extends JLabel{
      * This method moves the bullet in the direction of its target.
      */
     public void move(){
-        targetPosition = target.getPosition();
+        targetPosition = getTarget().getPosition();
         if(targetPosition[0] == position[0]) //Target is directly above or below bullet
         {
             //Move bullet speed pixels towards target
@@ -53,5 +53,12 @@ public class Bullet extends JLabel{
             position[0] = (int)(speed * Math.cos(angle) + position[0]); 
             position[1] = (int)(speed * Math.sin(angle) + position[1]);
         }
+    }
+
+    /**
+     * @return the target
+     */
+    public Enemy getTarget() {
+        return target;
     }
 }

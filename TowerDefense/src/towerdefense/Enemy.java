@@ -108,7 +108,7 @@ public class Enemy extends JLabel{
         position[1] = 0;
     }
     
-   
+    
     // getters and setters
     /**
      * @return the speed
@@ -148,29 +148,22 @@ public class Enemy extends JLabel{
      */
     public void move()
     {
-        System.out.println("move called");
-        System.out.println("enemy x position = " + position[0]);
-        System.out.println("enemy y position = " + position[1]);
-        
+                
         if(position[1] < 720 && position[0] == 240)
         {
             position[1] += speed;
-            System.out.println("move down");
         }
         else if(position[0] < 720 && position[1] >= 720)
         {
             position[0] += speed;
-            System.out.println("move right");
         }
         else if(position[1] > 400 && position[0] >= 720)
         {
             position[1] -= speed;
-            System.out.println("move up");
         }
         else if(position[0] < 960 && position[1] <= 400)
         {
             position[0] += speed;
-            System.out.println("move right again");
         }
     }
     
@@ -186,10 +179,8 @@ public class Enemy extends JLabel{
     
     public boolean offBoard()
     {
-        System.out.println("Offboard called");
         if(position[0] >= 960)
         {
-            System.out.println("enemy off board");
             return true;  
         }
         else

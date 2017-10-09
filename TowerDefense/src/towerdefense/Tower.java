@@ -33,8 +33,8 @@ public class Tower {
         location[0] = x;
         location[1] = y;
         //These values may need to be determined by type
-        damage = 1; 
-        radius = 10; //Radius of 10px
+        damage = 5; 
+        radius = 160; //Radius of 10px
         cost = 15; //Currently arbitrary
         image = new ImageIcon(); //TODO: add filepath 
     }
@@ -64,8 +64,23 @@ public class Tower {
         bullets.clear();
     }
     
-    public boolean impact(){
-        return false;
+    public int impact(){
+        int index = -1;
+        for(Bullet b: bullets)
+        {
+            index++;
+            if(b.getPosition()[0] == b.getTarget().getPosition()[0] && b.getPosition()[1] == b.getTarget().getPosition()[1])
+            {
+                target.takeDamage(damage);
+                System.out.println("enemy hit");
+                if(target.getHealth() <= 0)
+                {
+                    return index;
+                }
+                
+            }
+        }
+        return -1;
     }
     
     public String getName() {
