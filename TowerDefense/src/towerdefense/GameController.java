@@ -32,7 +32,8 @@ public class GameController implements ActionListener{
     private int enemyPosition[] = new int[2];
     MainMenuController theMainMenuController;
     private int enemyCount;
-    private ArrayList<Tower> towers = new ArrayList<>();    
+    private ArrayList<Tower> towers = new ArrayList<>(); 
+    private int spawnDelay = 0;
         
     
     
@@ -75,8 +76,9 @@ public class GameController implements ActionListener{
         }
         else if(action == clock)
         {
-            if(enemyCount < wave.getEnemies().size())
+            if(enemyCount < wave.getEnemies().size() & spawnDelay % 15 == 0)
             {
+                spawnDelay++;
                 Enemy currentEnemy = wave.getEnemies().get(enemyCount);
                 currentEnemy.setPosition(240, 0);
                 enemyPosition = currentEnemy.getPosition();
@@ -84,6 +86,10 @@ public class GameController implements ActionListener{
                 currentEnemy.setBounds(enemyPosition[0], enemyPosition[1], 64, 64);
                 enemyCount++;
                 System.out.println("enemy added");
+            }
+            else
+            {
+                spawnDelay++;
             }
             //Account for any new towers
             Iterator<Integer> iter = gridView.getNewTowers().iterator();
