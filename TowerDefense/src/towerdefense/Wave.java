@@ -97,16 +97,20 @@ public class Wave {
         return enemies;
     }
     
-    public void killEnemy(Enemy toKill)
+    public void killEnemy()
     {
-//        int index = enemies.indexOf(toKill);
-//        if(index > -1)
-//            enemies.get(index).setPosition(1000, 0);
-        
-        System.out.println(enemies.size());
-        enemies.remove(toKill);
-        System.out.println(enemies.size());
-      
+        int index = -1;
+        for(Enemy e: enemies)
+        {
+            if(e.getHealth() <= 0)
+            {
+                index = enemies.indexOf(e);
+                break;
+            }
+        }
+        if(index > -1)
+            enemies.remove(index);
+        System.out.println("enemy killed");
     }
     
     public void moveEnemies(){

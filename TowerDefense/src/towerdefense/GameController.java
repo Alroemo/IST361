@@ -105,7 +105,7 @@ public class GameController implements ActionListener{
                 gridPanel.remove(enemy);
             }
             wave.moveEnemies();
-            System.out.println("enemies moved");
+            //System.out.println("enemies moved");
 
             for(Enemy enemy: wave.getEnemies())
             {
@@ -158,10 +158,12 @@ public class GameController implements ActionListener{
                     if(impact > -1) // remove enemy and reward player
                     {
                         //System.out.println(impact);
-//                        int reward = wave.getEnemies().get(impact).getReward();
-//                        gridView.getPlayerController().setMoney(reward);
-                        wave.killEnemy(t.getBullets().get(impact).getTarget());
+                        int reward = t.getBullets().get(impact).getTarget().getReward();
+                        gridView.getPlayerController().setMoney(reward);
+                        gridPanel.remove(t.getBullets().get(impact).getTarget());
                         //remove bullet
+                        t.clearBullets();
+                        wave.killEnemy();
                     }
                 }
             }
