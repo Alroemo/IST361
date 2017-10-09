@@ -240,18 +240,21 @@ public class PlayerUI extends javax.swing.JPanel {
         // TODO add your handling code here:
         ImageIcon curTurret = new ImageIcon("snake_panel.gif");
         setCurrentTurret(curTurret);
+
     }//GEN-LAST:event_Image1MousePressed
 
     private void Image2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Image2MousePressed
         // TODO add your handling code here:
         ImageIcon curTurret = new ImageIcon("psy_panel.gif");
         setCurrentTurret(curTurret);
+
     }//GEN-LAST:event_Image2MousePressed
 
     private void Image3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Image3MousePressed
         // TODO add your handling code here:
         ImageIcon curTurret = new ImageIcon("punch_panel.gif");
         setCurrentTurret(curTurret);
+        
     }//GEN-LAST:event_Image3MousePressed
 
     public void setCurrentTurret(ImageIcon newIco){

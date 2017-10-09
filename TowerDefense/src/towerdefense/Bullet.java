@@ -19,6 +19,7 @@ public class Bullet extends JLabel{
     private Enemy target;
     
     public Bullet(Enemy target, int x, int y){
+        System.out.println("Bullet Spawned");
         this.target = target;
         position[0] = x;
         position[1] = y;

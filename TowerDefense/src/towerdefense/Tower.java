@@ -36,7 +36,7 @@ public class Tower {
         damage = 1; 
         radius = 10; //Radius of 10px
         cost = 15; //Currently arbitrary
-        image = new ImageIcon(); //TODO: add filepath      
+        image = new ImageIcon(); //TODO: add filepath 
     }
 
     public void fire(){

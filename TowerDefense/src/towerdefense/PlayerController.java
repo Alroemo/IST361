@@ -146,7 +146,6 @@ public class PlayerController {
  public static void updateUI(){
      ui.updateValues();
  }
-
  
 }
 

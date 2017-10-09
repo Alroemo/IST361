@@ -65,20 +65,24 @@ public class GridView extends JFrame {
                     theMainGrid[i][j].addMouseListener(new MouseListener(){
                         @Override
                         public void mouseClicked(MouseEvent e) {
+                            int towerCost = 15;
                             //ImageIcon towerIcon = new ImageIcon("snake_panel.gif");
                             //System.out.println("it works");
-                            ImageIcon towerIcon = playerController.ui.getTurretIcon();
-                            JLabel tempGrid = (JLabel) e.getSource();
-                            newTowers.add((tempGrid.getX()));
-                            newTowers.add((tempGrid.getY()));
-                            tempGrid.setIcon(towerIcon);
-			    int towerCost = 15; //This is a static price that needs to be changed to be tower specific                           
-			    playerController.setMoney(0-towerCost);
-                            playerController.ui.updateValues();
-                            tempGrid.validate();
-                            tempGrid.repaint();
+                            if(playerController.getMoney() >= towerCost)
+                            {
+                                ImageIcon towerIcon = playerController.ui.getTurretIcon();
+                                JLabel tempGrid = (JLabel) e.getSource();
+                                newTowers.add((tempGrid.getX()));
+                                newTowers.add((tempGrid.getY()));
+                                tempGrid.setIcon(towerIcon);
+                                //This is a static price that needs to be changed to be tower specific                           
+                                playerController.setMoney(0-towerCost);
+                                playerController.ui.updateValues();
+                                tempGrid.validate();
+                               tempGrid.repaint();
+                        
+                            }
                         }
-
                         @Override
                         public void mousePressed(MouseEvent e) {
 
