@@ -106,10 +106,9 @@ public class GameController implements ActionListener{
             }
             wave.moveEnemies();
             System.out.println("enemies moved");
-            //reset constraints and add each enemy back to board
+
             for(Enemy enemy: wave.getEnemies())
             {
-                //Set constraints
                 enemyPosition = enemy.getPosition();
                 gridPanel.add(enemy);
                 enemy.setBounds(enemyPosition[0], enemyPosition[1], 64, 64);
@@ -143,12 +142,6 @@ public class GameController implements ActionListener{
                     t.fire();
                     for(Bullet b: t.getBullets())
                     {
-                        int bulletLoc[] = b.getPosition();
-                        gridPanel.add(b);
-                        b.setBounds(bulletLoc[0], bulletLoc[1], 5, 5);
-                    }
-                    for(Bullet b: t.getBullets())
-                    {
                         gridPanel.remove(b);
                     }
                     t.moveBullets();
@@ -160,6 +153,7 @@ public class GameController implements ActionListener{
                         //check for impact here. 
                         
                     }
+                    
                     int impact = t.impact();
                     if(impact > -1) // remove enemy and reward player
                     {

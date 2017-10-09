@@ -5,6 +5,7 @@
  */
 package towerdefense;
 
+import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
@@ -23,7 +24,8 @@ public class Bullet extends JLabel{
         this.target = target;
         position[0] = x;
         position[1] = y;
-        setIcon(new ImageIcon("psyshock.gif"));
+        setOpaque(true);
+        setBackground(Color.DARK_GRAY);
         speed = 10; //TODO: update value to be slightly faster than enemy speed
     }
     

@@ -34,7 +34,7 @@ public class Tower {
         location[1] = y;
         //These values may need to be determined by type
         damage = 5; 
-        radius = 160; //Radius of 10px
+        radius = 160; //Radius of 160px
         cost = 15; //Currently arbitrary
         image = new ImageIcon(); //TODO: add filepath 
     }
