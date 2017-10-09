@@ -66,17 +66,19 @@ public class GridView extends JFrame {
                         @Override
                         public void mouseClicked(MouseEvent e) {
                             int towerCost = 15;
-                            //ImageIcon towerIcon = new ImageIcon("snake_panel.gif");
-                            //System.out.println("it works");
-                            ImageIcon towerIcon = getPlayerController().ui.getTurretIcon();
-                            JLabel tempGrid = (JLabel) e.getSource();
-                            newTowers.add((tempGrid.getX()));
-                            newTowers.add((tempGrid.getY()));
-                            tempGrid.setIcon(towerIcon);
-			    getPlayerController().setMoney(0-towerCost);
-                            getPlayerController().ui.updateValues();
-                            tempGrid.validate();
-                            tempGrid.repaint();
+                            if(playerController.getMoney() >= towerCost){
+                                //ImageIcon towerIcon = new ImageIcon("snake_panel.gif");
+                                //System.out.println("it works");
+                                ImageIcon towerIcon = getPlayerController().ui.getTurretIcon();
+                                JLabel tempGrid = (JLabel) e.getSource();
+                                newTowers.add((tempGrid.getX()));
+                                newTowers.add((tempGrid.getY()));
+                                tempGrid.setIcon(towerIcon);
+                                getPlayerController().setMoney(0-towerCost);
+                                getPlayerController().ui.updateValues();
+                                tempGrid.validate();
+                                tempGrid.repaint();
+                            }
                         }
                         @Override
                         public void mousePressed(MouseEvent e) {
