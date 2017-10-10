@@ -98,13 +98,15 @@ public class MainMenuUI extends JFrame{
                 
                 
 		JLabel highscores = new JLabel("High Scores!");
-		taHighscores = new JTextArea("Write High Score Here");
+		taHighscores = new JTextArea("");
 		panelThree.add(highscores);
                 panelThree.add(taHighscores);
                 
 		
                 JLabel instructions = new JLabel("Instructions!");
-		taInstructions = new JTextArea("Write Instructions Here");
+		taInstructions = new JTextArea("Place towers to destroy the \n"
+                                                + "aliens and progress to\n"
+                                                + "the next wave!");
 		panelFour.add(instructions);
                 panelFour.add(taInstructions);
                 
