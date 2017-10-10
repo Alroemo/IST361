@@ -162,6 +162,10 @@ public class GameController implements ActionListener{
                         gridView.getPlayerController().setMoney(reward);
                         gridPanel.remove(t.getBullets().get(impact).getTarget());
                         //remove bullet
+                        for(Bullet b: t.getBullets())
+                        {
+                            gridPanel.remove(b);
+                        }
                         t.clearBullets();
                         wave.killEnemy();
                     }
