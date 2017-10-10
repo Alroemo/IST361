@@ -49,7 +49,7 @@ public class Bullet extends JLabel{
         else //Target at an angle from the bullet
         {
             //Find angle from bullet position to target position
-            double angle = Math.atan((targetPosition[1] - position[1])/(targetPosition[0] - position[0]));
+            double angle = Math.atan2((double)(targetPosition[1] - position[1]),(double)(targetPosition[0] - position[0]));
             
             //Set x and y values so that the bullet has moved speed pixels in the direction of the target
             position[0] = (int)(speed * Math.cos(angle) + position[0]); 
